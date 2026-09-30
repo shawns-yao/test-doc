@@ -1,99 +1,162 @@
 ---
 aliases:
-  - Synchronized是什么
+- Synchronized是什么
 ---
 
-# Synchronized 是什么？
+# 03 Synchronized 是什么？
 
-## 一句话回答
+## 01 一句话回答
 
 这是 Java 提供的一个线程同步关键字。
 
-## 核心原理
-
+## 02 核心原理
 
 核心作用：只允许一个线程进入某个受保护的代码区域，并且线程之间能看到彼此对共享数据的修改
 即为：给这一段操作加一把锁。谁先拿到锁，谁先执行；其他线程必须等。
 
 所以解决的问题
-	原子性/互斥，防止多个线程同时修改共享数据
-	可见性：一个线程修改完共享数据之后，后续获取同一把锁的线程能够看到最新的结果
+原子性/互斥，防止多个线程同时修改共享数据
+可见性：一个线程修改完共享数据之后，后续获取同一把锁的线程能够看到最新的结果
 
 ---
 
-## 直观理解
+## 03 直观理解
 
 可以把 synchronized 理解成排队，比如存在一个只有一把钥匙的房间
-线程 A，B，C 都像进入这个房间，但是规则是拿到钥匙才能进去，假如 A 拿到了钥匙，A 进入，B 和 C 只能在外面等待
+线程 A，B，C 都想进入这个房间，但是规则是拿到钥匙才能进去，假如 A 拿到了钥匙，A 进入，B 和 C 只能在外面等待
 
 ---
 
-# 为什么需要 synchronized？
+## 04 为什么需要 synchronized？
 
 因为很多操作看起来是一句话，但是其实并不是一步完成的，
-比如 count++，这其实是三个操作，如果两个线程同时执行这段代码，同时进行修改，最终结果可能加了两次
-
-
+比如 count++，这其实是三个操作，如果两个线程同时执行这段代码，同时进行修改，最终结果可能只增加 1，发生丢失更新
 
 ---
 
-## synchronized 怎么解决这个问题？
+## 05 synchronized 怎么解决这个问题？
 
 把要执行的操作放到 synchronized 保护的范围内，并且这个期间 B 不能进来
-需要等到 A 完成之后，然后 B 在拿到锁，
+需要等到 A 完成之后，然后 B 再拿到锁，
 所以 synchronized 的核心是在执行操作的期间，不允许其他竞争同一把锁的线程进入，这个是保证原子性的方式
 
-并且一定是强调是不是同一把锁，因为因为 synchronized 是否能互斥，关键不是有没有写 synchronized，而是两个线程抢的是不是同一个锁对象。
+并且一定是强调是不是同一把锁，因为 synchronized 是否能互斥，关键不是有没有写 synchronized，而是两个线程抢的是不是同一个锁对象。
 
 ---
 
-## synchronized 修饰普通方法时锁谁？
+## 06 synchronized 修饰普通方法时锁谁？
 
 synchronized 锁的是对象，也就是 this，
 比如有一个对象 account，线程 A 调用 account.add()，线程 B 也调用 account.add()，
 因为操作的是同一个 account 对象，所以竞争的是同一个对象的锁，所以可以互斥
 
-
 ---
 
-## static synchronized 又锁谁？
+## 07 static synchronized 又锁谁？
 
 如果 synchronized 修饰的是静态方法，那么锁的就不是 this，因为静态方法没有 this，那么锁的是当前类对应的 Class 对象（也就是 Account.class）。
 
-
 ---
 
-## synchronized 不只是保证原子性
+## 08 synchronized 不只是保证原子性
 
 synchronized 主要保证的是
-	互斥：同一个时刻，只能有一个线程持有同一把锁
-	可见性：前一个持锁线程在临界区里做的所有修改，下一个拿到**同一把锁**的线程一定能看到
+互斥：同一个时刻，只能有一个线程持有同一把锁
+可见性：前一个持锁线程在临界区里做的所有修改，下一个拿到**同一把锁**的线程一定能看到
 
-## 常见追问
+## 09 常见追问
 
-### synchronized 是否支持可重入？
+### 09.1 synchronized 是否支持可重入？
 
 支持。同一个线程已经持有某个对象的锁时，再次进入由同一把锁保护的同步方法或同步代码块，不需要重新等待。JVM 会记录重入次数，退出相应次数后才真正释放锁。
 
-### synchronized 是公平锁吗？
+### 09.2 synchronized 是公平锁吗？
 
 synchronized 不提供公平锁和非公平锁的显式配置。线程竞争锁时的获取顺序由 JVM 和底层调度机制决定，不能依赖它实现严格的先来先得。
 
-### synchronized 和 ReentrantLock 有什么区别？
+### 09.3 synchronized 和 ReentrantLock 有什么区别？
 
 两者都可以实现互斥和可重入，但关注点不同：
 
 - synchronized 是 Java 关键字，使用简单，退出同步范围时自动释放锁。
-- [[04-ReentrantLock是什么|ReentrantLock是什么]] 是 Java 类，基于 AQS，需要手动 `unlock()`，但支持可中断、超时获取、公平锁和多个 Condition。
-- 简单的互斥场景优先考虑 synchronized；需要更细粒度控制时再考虑 [[04-ReentrantLock是什么|ReentrantLock是什么]]。
+- [[八股/01-Java/03-Java并发/04-ReentrantLock是什么|ReentrantLock是什么]] 是 Java 类，基于 AQS，需要手动 `unlock()`，但支持可中断、超时获取、公平锁和多个 Condition。
+- 简单的互斥场景优先考虑 synchronized；需要更细粒度控制时再考虑 [[八股/01-Java/03-Java并发/04-ReentrantLock是什么|ReentrantLock是什么]]。
 
-### synchronized 的锁升级过程是什么？
+### 09.4 synchronized 的锁升级过程是什么？
 
 锁竞争较低时，JVM 会尽量使用更轻量的方式处理；竞争加剧时可能进入重量级监视器。具体锁实现和版本有关，复习时重点掌握“竞争越激烈，协调成本越高”的基本思路，不要脱离 JDK 版本死记实现细节。
 
-## 相关笔记
+## 10 相关笔记
 
-- [[04-ReentrantLock是什么|ReentrantLock是什么]]
-- [[02-Volatile|Volatile]]
-- [[01-Java 内存模型（JMM）是什么？|Java 内存模型（JMM）是什么？]]
-- [[05-ThreadLocal会造成内存泄露吗|ThreadLocal会造成内存泄露吗]]
+- [[八股/01-Java/03-Java并发/04-ReentrantLock是什么|ReentrantLock是什么]]
+- [[八股/01-Java/03-Java并发/02-Volatile|Volatile]]
+- [[八股/01-Java/03-Java并发/01-Java 内存模型（JMM）是什么？|Java 内存模型（JMM）是什么？]]
+- [[八股/01-Java/03-Java并发/05-ThreadLocal会造成内存泄露吗|ThreadLocal会造成内存泄露吗]]
+
+## 11 旧面经的详细补充
+
+`synchronized` 在 JDK 1.6 之前是纯重量级锁，直接依赖操作系统互斥量，线程阻塞与唤醒需要用户态/内核态切换，开销大。JDK 1.6 引入锁升级机制：下文是以旧版 HotSpot 为背景的偏向、轻量级与膨胀监视器教学路径，不是 Java 规范，也不是所有对象都必经的单向状态机。
+
+1. **无锁**
+
+对象未被竞争，Mark Word（对象头中的标记字） 保持无锁状态（状态位 01），是所有锁状态的起点。
+
+2. **偏向锁**
+
+**适用：**只有一个线程反复进入同步块。
+
+**原理：**Mark Word 记录持有线程 ID，该线程再次进入时无需任何原子操作，直接执行。
+
+**关键：**其他线程竞争时撤销偏向锁，某些竞争撤销路径需要安全点协调，并非每次撤销都必然全局 STW；JDK 15 起默认禁用偏向锁（JEP 374）。
+
+3. **轻量级锁**
+
+**适用：**多个线程交替访问、竞争不激烈。
+
+**原理：**线程栈帧创建 Lock Record，用 CAS 把 Mark Word 替换为指向锁记录的指针；CAS 失败说明有竞争，自旋等待。
+
+**关键：**自旋避免线程阻塞（JDK 1.6 后为自适应自旋），适合临界区执行时间短的场景。
+
+4. **重量级锁**
+
+**适用：**竞争激烈或临界区执行时间长。
+
+**原理：**锁膨胀为 ObjectMonitor，线程进入阻塞队列等待，依赖操作系统互斥量，涉及用户态/内核态切换。
+
+**关键：**阻塞不消耗 CPU，但唤醒开销大。
+
+**Mark Word 与状态位：**对象头中的 Mark Word 随锁状态变化——偏向锁存线程 ID、轻量级锁存锁记录指针、重量级锁存 Monitor 指针；状态标志位：01 无锁/偏向、00 轻量级、10 重量级、11 GC 标记。
+
+**常见追问：**① 监视器可在满足条件时去膨胀，不能把“锁只能升级”当跨版本规范；② 偏向锁的同步/撤销成本、维护复杂度与收益变化是 JDK 15 默认禁用它的背景（JEP 374）；③ 自旋是自适应的——根据上次自旋结果动态调整次数，避免白白空转 CPU。
+
+**口述重点：**旧版实现的直观记忆是“竞争越激烈，协调成本通常越高”：一个线程反复进 → 偏向；多线程交替进 → 轻量级（CAS + 自旋）；竞争激烈或临界区长 → 重量级（Monitor 阻塞）。
+
+---
+
+## 12 语言保证与 HotSpot 版本要分开
+
+语言层面长期稳定的是同一监视器互斥、可重入、正常或异常退出时释放、解锁到后续加锁的 happens-before。同步块通常对应 monitorenter/monitorexit；同步方法由方法标志和 JVM 调用规则实现，不能说每个同步方法字节码都有这两条指令。
+
+旧文的锁记录指针、偏向位和升级图用于理解旧版 HotSpot。JDK 15 已默认禁用偏向锁；讨论 JDK 21 不能默认每次加锁都先走偏向。对象头布局、轻量级锁和 monitor 膨胀/去膨胀是实现细节，答题要先限定版本，不应把“只能升级，永不下降”作为规范。
+
+## 13 wait、sleep 与虚拟线程追问
+
+- wait 必须持有目标对象监视器，会释放该监视器，返回前重新获取；其他已持有的锁不会因此全部释放
+- sleep 不释放已持有监视器；等待进入 synchronized 不能像 lockInterruptibly 一样由中断取消，但进入后调用 wait 等方法可以响应中断
+- notify 只通知等待集中的一个线程，notifyAll 通知全部；被通知不等于马上获得锁，条件必须在循环中重新检查
+- JDK 21 的虚拟线程在 synchronized 中执行阻塞操作可能固定 carrier；JDK 24 的 JEP 491 消除了因监视器同步而造成的这类固定，不能把 JDK 21 的建议无条件套用到新版
+
+## 14 校正依据
+
+保留旧锁图作为历史资料，修正“单向必经升级”“竞争自增结果”与跨版本混用。
+
+- [JLS 17.1 锁与同步](https://docs.oracle.com/javase/specs/jls/se21/html/jls-17.html#jls-17.1)
+- [JLS 17.2 等待集与通知](https://docs.oracle.com/javase/specs/jls/se21/html/jls-17.html#jls-17.2)
+- [Oracle Java 15 发布说明：默认禁用偏向锁](https://blogs.oracle.com/java/the-arrival-of-java-15)
+- [Oracle JDK 24 发布说明：Synchronize Virtual Threads without Pinning](https://www.oracle.com/java/technologies/javase/24-relnote-issues.html)
+
+- [[八股/01-Java/03-Java并发/10-Java 21 虚拟线程是什么？适合什么场景|虚拟线程的固定与 JDK 版本差异]]
+
+## 15 所属专题
+
+- [[八股/01-Java/03-Java并发/00-Java并发导航|Java并发导航]]
