@@ -26,13 +26,19 @@ Autonomous 描述自治程度，single/multi 描述智能体数量，是两个�
 
 口述：“先定自治边界，再决定是否拆角色；结构复杂度和行动权限分开评估。”参见[[八股/07-AI与Agent/02-Agent原理与编排/08-多智能体系统相比单 Agent 有什么优势？引入哪些新复杂性|多 Agent 的收益与代价]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/12-多Agent复习/01-什么场景下必须上 Multi-Agent,单 Agent 搞不定|什么场景下必须上 Multi-Agent,单 Agent 搞不定?]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
 
 ## 05 直接追问：如何定义降级与恢复门槛
 
@@ -41,6 +47,8 @@ Autonomous 描述自治程度，single/multi 描述智能体数量，是两个�
 恢复不应只看“工具又能连上”：先核验在途动作，回放失败样本，再小流量放开；恢复阈值与触发阈值可留出间隔，避免反复切换。具体百分比必须来自业务基线与风险容忍度，不能把演示数字说成真实线上成果。
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的题目与资料](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/02_Workflow%E4%B8%8E%E5%A4%9AAgent/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L11-L21)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。将原资料只提出的降级阈值追问补成可执行判据；不引入未经验证的成功率数字。 许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
+
+---
 
 ## 06 所属专题
 - [[八股/07-AI与Agent/02-Agent原理与编排/00-Agent原理与编排导航|Agent原理与编排导航]]

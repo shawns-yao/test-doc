@@ -27,14 +27,20 @@ aliases:
 
 Deployment 失败会报告停滞状态，原生控制器不会因进度期限超时就自动回滚，需发布工具或人工策略。ConfigMap 卷更新与环境变量更新行为不同，而且配置更新不自动触发 Deployment rollout。readiness 决定是否接流量，liveness 决定是否重启，startup 为慢启动提供保护；混淆探针可能导致故障重启风暴。
 
+---
+
 ## 03 依据与延伸阅读
 
 - [Kubernetes Deployment 行为](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 - [ConfigMap 更新边界](https://kubernetes.io/docs/concepts/configuration/configmap/)
 
+---
+
 ## 04 相关问题
 
 - [[八股/10-工程实践/06-容器与部署/01-Docker 了解吗？在项目中怎么使用|Docker 了解吗？在项目中怎么使用]]：容器打包与声明式编排
+
+---
 
 ## 05 所属专题
 

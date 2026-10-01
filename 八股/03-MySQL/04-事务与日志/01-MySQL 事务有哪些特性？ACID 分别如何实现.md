@@ -29,17 +29,25 @@ aliases:
 
 **面试追问：**redo log 和 undo log 分别保证什么（持久性 vs 原子性）；两阶段提交协调的是什么（redo 和 binlog）；一致性是数据库单独保证的吗（不是，业务也要参与）；隔离性有哪些实现代价（锁、MVCC、并发度与业务语义的权衡）。
 
+---
+
 ## 02 理解机制与追问
 
 原子性和持久性关注不同失败时刻：事务未提交要能撤销，提交后则要能重做。脏页可能包含尚未提交事务的修改，因此崩溃恢复不是只重放“已提交数据”；通常先恢复页状态，再由事务状态和 undo 处理未完成事务。业务一致性仍需唯一约束、条件更新或合适隔离级别配合。
+
+---
 
 ## 03 易错点与适用边界
 
 持久性必须加配置前提。常见强持久配置为 innodb_flush_log_at_trx_commit=1，并在启用 binlog 时配合 sync_binlog=1，还依赖存储真实兑现刷盘承诺。放宽刷盘、异步副本故障切换、设备损坏的保证各不相同。原“异常就全部回滚”也应区分语句失败与整个事务失败，应用必须按错误类型处理事务。
 
+---
+
 ## 04 面试口述
 
 undo 支持撤销和历史版本，redo 支持页恢复，锁与 MVCC 实现隔离；一致性由数据库约束和业务逻辑共同维持。谈提交不丢必须说明刷盘与故障模型。
+
+---
 
 ## 05 关联问题
 
@@ -50,6 +58,8 @@ undo 支持撤销和历史版本，redo 支持页恢复，锁与 MVCC 实现隔�
 - [[八股/03-MySQL/04-事务与日志/07-为什么有 binlog 还需要 redo log？两者分别解决什么问题|redo 和 binlog 分工]]
 - [[八股/03-MySQL/04-事务与日志/04-MVCC 是什么？它如何实现一致性读|MVCC]]
 
+---
+
 ## 06 官方参考
 
 - [MySQL 8.4 Redo Log](https://dev.mysql.com/doc/refman/8.4/en/innodb-redo-log.html)
@@ -57,9 +67,13 @@ undo 支持撤销和历史版本，redo 支持页恢复，锁与 MVCC 实现隔�
 - [MySQL 8.4 隔离级别](https://dev.mysql.com/doc/refman/8.4/en/innodb-transaction-isolation-levels.html)
 - [MySQL 8.4 InnoDB 刷盘参数](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_flush_log_at_trx_commit)
 
+---
+
 ## 07 相关问题与延伸
 
 - [[八股/02-Spring框架/01-Spring核心/08-事务传播行为常见用法|事务传播行为常见用法]]：应用事务边界与数据库ACID
+
+---
 
 ## 08 所属专题
 

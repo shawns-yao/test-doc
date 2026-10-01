@@ -31,17 +31,25 @@ aliases:
 
 实际系统常让 MySQL 保存最终事实，Redis 承担缓存和高并发读写。使用 Redis 时要设计过期、淘汰、持久化、故障恢复和缓存一致性；使用 MySQL 时要关注索引、事务边界、慢查询、连接池和备份，不能简单地用一个替代另一个。
 
+---
+
 ## 02 理解机制与追问
 
 比较要对齐数据模型与恢复目标。Redis 的简单原子数据结构操作路径短，MySQL 的索引和 Buffer Pool 也可能使查询主要在内存完成；差别不等于“一个内存，一个每次都磁盘”。Redis 支持持久化和复制，但事务错误、隔离与恢复语义不同。
+
+---
 
 ## 03 易错点与适用边界
 
 不能从 Redis 适合缓存推导出它只能做缓存，也不能从支持 AOF 推导出任何配置都适合作为唯一事实源。使用 Redis 存不可重建数据时，需要有明确 RPO/RTO、淘汰策略、备份和恢复演练。跨 Redis/MySQL 写入不会自动共享事务。
 
+---
+
 ## 04 面试口述
 
 MySQL 常承载关系事实和事务约束，Redis 常承载数据结构化的低延迟访问。按模型、一致性和故障恢复选型，不能只按单次 GET 与 SQL 的耗时比较。
+
+---
 
 ## 05 关联问题
 
@@ -50,11 +58,15 @@ MySQL 常承载关系事实和事务约束，Redis 常承载数据结构化的�
 - [[八股/04-Redis/02-数据结构与工程实践/04-Redis 事务和 MySQL 事务有什么区别|事务语义差异]]
 - [[八股/04-Redis/02-数据结构与工程实践/32-为什么不把所有查询都塞到 Redis|哪些查询值得缓存]]
 
+---
+
 ## 06 官方参考
 
 - [Redis 事务与错误处理](https://redis.io/docs/latest/develop/using-commands/transactions/)
 - [Redis RDB 与 AOF 持久化](https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/)
 - [Redis 紧凑编码与版本](https://redis.io/docs/latest/operate/oss_and_stack/management/optimization/memory-optimization/)
+
+---
 
 ## 07 所属专题
 

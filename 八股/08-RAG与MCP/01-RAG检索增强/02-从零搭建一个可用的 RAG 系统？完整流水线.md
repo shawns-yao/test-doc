@@ -28,16 +28,22 @@ BERT 原始编码向量不一定适合直接做语义检索，应选择经过检
 
 离线流水线要处理新增、修改、删除和 ACL 收紧；每次发布关联解析器、chunk、embedding 与索引版本，在线请求选定一个可追溯版本。更多存储约束见[[八股/08-RAG与MCP/01-RAG检索增强/20-RAG 向量库|向量库]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/08-RAG与MCP/01-RAG检索增强/12-RAG 部署的实际挑战|RAG 部署的实际挑战？]]
 - [[八股/07-AI与Agent/09-Agent项目实践/31-向量增量更新后排序变化怎么解|向量增量更新后排序变化怎么解]]
+
+---
 
 ## 04 参考资料
 
 - [Faiss 官方索引说明](https://github.com/facebookresearch/faiss/wiki/Faiss-indexes)
 - [BGE-M3 作者模型说明](https://huggingface.co/BAAI/bge-m3)
 - [pgvector 官方文档](https://github.com/pgvector/pgvector)
+
+---
 
 ## 05 所属专题
 

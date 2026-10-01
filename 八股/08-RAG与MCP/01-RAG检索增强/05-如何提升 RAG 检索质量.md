@@ -32,16 +32,22 @@ BM25 与向量分数尺度不同，融合方法要固定并调参；RRF 按排�
 
 服务端在材料进入重排、模型、缓存前检查权限；可信数据库也可能含用户提交的恶意文本，不能把整段结果都升级为指令。
 
+---
+
 ## 03 关联追问
 
 - [[八股/08-RAG与MCP/01-RAG检索增强/13-Query Rewrite 怎么设计|Query Rewrite 怎么设计？]]
 - [[八股/08-RAG与MCP/01-RAG检索增强/14-Rerank 和 TopK 怎么设置|Rerank 和 TopK 怎么设置？]]
 - [[八股/08-RAG与MCP/02-RAG复习/02-检索结果不准导致 Agent 决策跑偏,你怎么解决|检索结果不准导致 Agent 决策跑偏,你怎么解决?]]
 
+---
+
 ## 04 参考资料
 
 - [Elasticsearch 官方 kNN 文档](https://www.elastic.co/docs/solutions/search/vector/knn)
 - [MCP 官方安全实践](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices)
+
+---
 
 ## 05 直接追问：BM25 和 HyDE 实际怎样参与检索
 
@@ -52,6 +58,8 @@ HyDE 的关键链路是：原始问题 → 生成一段可能回答问题的假�
 假设文档可能包含虚构细节，不能写入事实库或当最终引用。工程上保留原始 query 的召回通路，比较加入 HyDE 前后的真实证据召回、错误引导比例、生成开销和时延；错误码、精确数值等查询可能更需要词法匹配。
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的原题与资料](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/03_RAG/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L162-L187)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。补回原资料中的 BM25 打分因素及 HyDE 的假设文档嵌入流程，明确算法机制与事实证据的区别。 许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
+
+---
 
 ## 06 所属专题
 

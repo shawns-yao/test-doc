@@ -13,28 +13,40 @@ aliases:
 
 **评估清单：**做命令兼容性、数据类型、TTL、Lua、事务、Stream、Pipeline、故障切换和备份恢复测试；用真实 key 分布和读写比例测 P95/P99 延迟、吞吐、存储放大、扩容时间和恢复时间。迁移前确认客户端重连、监控、权限、双写、数据校验和回滚方案，不能只验证几个 `GET/SET`。
 
+---
+
 ## 02 理解机制与追问
 
 例如 Apache Kvrocks 兼容 Redis 协议和一组命令，使用 RocksDB 承载数据，说明“Redis 客户端能连上”与“底层是 Redis 内存模型”没有必然关系。协议兼容验证请求/响应格式，语义兼容还要验证错误类型、原子范围、TTL、脚本、事务及集群重定向。
+
+---
 
 ## 03 易错点与适用边界
 
 不能把命令支持表里的勾选当作所有边界行为完全相同。迁移需抽取真实命令和 Lua 清单，验证最大数据量、持久化配置、故障切换后恢复点，以及客户端对不同返回值的处理。RocksDB 带来的容量优势可能伴随缓存未命中和 compaction 尾延迟。
 
+---
+
 ## 04 面试口述
 
 我知道 Redis 协议兼容数据库是降低接入成本的方案，但选择时会逐项验证协议、命令、故障语义和性能，不能无测试直接替换。
+
+---
 
 ## 05 关联问题
 
 - [[八股/04-Redis/02-数据结构与工程实践/16-RocksDB、Redis 和其他 KV 存储有什么区别|引擎与服务层次]]
 - [[八股/04-Redis/02-数据结构与工程实践/23-Redis 的持久化机制有哪些|持久化目标]]
 
+---
+
 ## 06 官方参考
 
 - [Apache Kvrocks 官方介绍](https://kvrocks.apache.org/)
 - [Apache Kvrocks 命令支持表](https://kvrocks.apache.org/docs/supported-commands/)
 - [Redis RESP 协议规范](https://redis.io/docs/latest/develop/reference/protocol-spec/)
+
+---
 
 ## 07 所属专题
 

@@ -22,15 +22,21 @@ LangChain 的高层 Agent API 基于 LangGraph 运行，不宜再把 LangChain �
 
 口述：“先用高层 API 快速起步，需要精细控制状态生命周期和恢复路径时下沉到图层。”参考[[八股/07-AI与Agent/07-框架协议与工程化/04-LangGraph 生产治理怎么做|图的生产治理]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/08-数据Agent设计/07-数据Agent中如何选择LangChain和LangGraph|数据 Agent 中如何选择 LangChain 和 LangGraph]]
 - [[八股/07-AI与Agent/11-Agent工程复习/01-LangChain LangGraph AutoGen CrewAI 用过哪个为什么选它,踩过什么坑|LangChain / LangGraph / AutoGen / CrewAI 用过哪个?为什么选它,踩过什么坑?]]
 
+---
+
 ## 04 参考资料
 
 - [LangChain 官方概览](https://docs.langchain.com/oss/python/langchain/overview)
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
+
+---
 
 ## 05 所属专题
 

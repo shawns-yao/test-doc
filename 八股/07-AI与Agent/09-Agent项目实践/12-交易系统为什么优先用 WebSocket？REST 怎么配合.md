@@ -20,6 +20,8 @@ aliases:
 
 WebSocket 连接内传输有顺序性，不等于跨重连不丢事件。客户端要处理心跳、订阅确认、断线重连、认证过期、背压与消费延迟；监测最后事件时间和序列号，不能只看 socket 仍连接就认为行情新鲜。
 
+---
+
 ## 03 配合方式
 
 启动时取得快照并与缓冲增量衔接；运行中处理序列缺口和必要的 REST 回查；订单事件缺失时按订单 ID 查询权威状态。回补要遵守接口限流，不能故障时同时全量拉取压垮服务。请求超时与流断开都不等于订单失败。
@@ -28,14 +30,20 @@ WebSocket 连接内传输有顺序性，不等于跨重连不丢事件。客户�
 
 相关：[[八股/07-AI与Agent/09-Agent项目实践/13-Order book 的 snapshot + 增量更新怎么保证正确|快照与增量衔接]]。
 
+---
+
 ## 04 关联追问
 
 - [[八股/07-AI与Agent/07-框架协议与工程化/08-SSE 原理与作用|SSE 原理与作用？]]
+
+---
 
 ## 05 参考资料
 
 - [Binance 官方 WebSocket 与订单簿同步文档](https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams.md)
 - [Binance 官方现货交易接口契约](https://developers.binance.com/docs/binance-spot-api-docs/rest-api/trading-endpoints)
+
+---
 
 ## 06 所属专题
 

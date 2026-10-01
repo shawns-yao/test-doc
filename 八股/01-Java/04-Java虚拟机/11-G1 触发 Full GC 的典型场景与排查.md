@@ -32,16 +32,22 @@ aliases:
 
 若长期活跃集接近上限，提前标记也回收不出足够空间；若短时分配峰值太陡，应限并发、削峰或增加余量；若大量 Humongous 对象，则优先减少大对象和确认连续 Region。显式 System.gc、诊断操作也可能请求 Full GC，需核对调用来源。
 
+---
+
 ## 03 参数取舍与依据
 
 扩大 G1ReservePercent 会保留更多疏散余量，同时压缩正常可用容量；调整 IHOP 要先理解自适应行为，不能只套固定百分比。G1HeapRegionSize 的变化同时影响大对象分类和回收粒度。一次只改有证据支持的因素并回放同负载。
 
 - [G1 调优：Full GC、疏散失败和 Humongous](https://docs.oracle.com/en/java/javase/21/gctuning/garbage-first-garbage-collector-tuning.html)
 
+---
+
 ## 04 相关问题与延伸
 
 - [[八股/01-Java/04-Java虚拟机/08-G1 的核心思想是什么|G1 的核心思想是什么]]：分区回收策略及退化条件
 - [[八股/01-Java/04-Java虚拟机/12-GC 日志快速看什么|GC 日志快速看什么]]：Full GC原因与日志证据
+
+---
 
 ## 05 所属专题
 

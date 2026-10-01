@@ -24,14 +24,20 @@ Prompt Engineering 不限于单轮，上下文工程也不限于多轮；前者�
 
 口述：“管理的不只是 token 数，而是当前决策需要的信息，以及这些信息从哪里来、何时失效。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/03-上下文与记忆/03-Prompt Engineering 优化策略有哪些|Prompt Engineering 优化策略有哪些？]]
 - [[八股/07-AI与Agent/03-上下文与记忆/05-如何突破上下文窗口限制|如何突破上下文窗口限制？]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 上下文工程说明](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+
+---
 
 ## 05 所属专题
 

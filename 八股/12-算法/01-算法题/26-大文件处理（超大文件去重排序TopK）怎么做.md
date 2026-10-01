@@ -93,9 +93,13 @@ static void intersectSorted(Iterator<String> a, Iterator<String> b,
 }
 ```
 
+---
+
 ## 02 时间和空间复杂度
 
 令 N 为记录数、R=ceil(N/M)、F≥2 为归并路数，假设键比较/计数为 O(1)。生成有序段 O(N log(M+1)) 时间、O(M) 内存；每轮归并 O(N log F) 时间、O(F) 工作内存，共 ceil(log_F R) 轮，含初始读写的 I/O 为 O(N(1+ceil(log_F R))) 条记录。已排序流去重 O(N) 时间/O(1) 工作空间；值 TopK O(N log(K+1)) 时间/O(K) 空间；频次 TopK 在全局排序之后为 O(N+u log(K+1)+K log(K+1)) 时间/O(K) 空间。两有序流交集 O(N1+N2) 时间/O(1) 工作空间，以上均不含输入/输出及外存文件。变长键还需乘实际比较成本；Bloom 阳性不能直接丢弃，按文件偏移分块的局部频次 TopK 不能直接当全局答案。
+
+---
 
 ## 03 参考与关联
 
@@ -103,9 +107,13 @@ static void intersectSorted(Iterator<String> a, Iterator<String> b,
 - [Redis 官方文档：布隆过滤器的误判边界](https://redis.io/docs/latest/develop/data-types/probabilistic/bloom-filter/)
 - [[八股/12-算法/01-算法题/02-前 K 个高频元素，如何改成求第 2 个高频元素|前 K 个高频元素，如何改成求第 2 个高频元素]]：内存受限时的TopK与外存分治
 
+---
+
 ## 04 所属专题
 
 - [[八股/12-算法/01-算法题/00-算法题导航|算法题导航]]
+
+---
 
 ## 05 相关问题与延伸
 

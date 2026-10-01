@@ -22,17 +22,25 @@ aliases:
 
 **追问：**热 key 和大 key 的区别（访问热点 vs 体积大，可同时存在）；UNLINK 如何降低阻塞（摘除后异步释放较重对象，但仍有前台与后台开销）；拆 key 影响业务怎么办（聚合层/多 key 查询补偿）。
 
+---
+
 ## 02 理解机制与追问
 
 大 key 可指单值字节大，也可指集合元素多；热 key 则是访问频率高，两者可独立存在。诊断同时看内存、元素数、命令复杂度与响应字节。bigkeys 的集合大小统计不完全等于实际内存，需结合 MEMORY USAGE 采样及业务维度定位。
+
+---
 
 ## 03 易错点与适用边界
 
 UNLINK 先从键空间摘除，再把较重释放工作放到后台，主线程仍有命令与摘除成本，不能说绝对零阻塞。后台释放也消耗 CPU，内存不一定瞬间归还。拆分后要重新设计原子操作、聚合与 hash tag，避免所有子键仍集中同槽；扫描式清理需限速和可暂停。
 
+---
+
 ## 04 面试口述
 
 我先分清体积和访问热点，再限制单次处理量、分批访问与异步回收；真正拆 key 时同时处理路由、聚合和原子语义。
+
+---
 
 ## 05 关联问题
 
@@ -53,11 +61,15 @@ UNLINK 先从键空间摘除，再把较重释放工作放到后台，主线程�
 - [[八股/04-Redis/02-数据结构与工程实践/20-Redis 集群中的 16384 个槽位是怎么分配和迁移的|迁移与槽]]
 - [[八股/04-Redis/02-数据结构与工程实践/25-Redis 为什么快|尾延迟来源]]
 
+---
+
 ## 06 官方参考
 
 - [Redis UNLINK](https://redis.io/docs/latest/commands/unlink/)
 - [Redis SCAN 的完整遍历保证](https://redis.io/docs/latest/commands/scan/)
 - [Redis 紧凑编码与版本](https://redis.io/docs/latest/operate/oss_and_stack/management/optimization/memory-optimization/)
+
+---
 
 ## 07 所属专题
 

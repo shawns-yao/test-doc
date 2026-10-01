@@ -43,26 +43,38 @@ Extra
 
 **面试追问：**type 从 ref 退化成 ALL 说明什么（访问方式发生变化，需要结合成本和实际数据判断）；Using filesort 一定慢吗（不一定慢；表示额外排序，可能在内存完成）；key_len 能看出什么（联合索引用了几列）。
 
+---
+
 ## 02 理解机制与追问
 
 传统格式适合快速看访问方式；TREE 能看执行器父子关系。阅读实际计划时从叶子向根追踪输入行数、过滤后行数和 loops，某个小内表扫描若重复十万次也可能是瓶颈。actual time 通常含子节点工作，不能把各节点耗时简单求和；多次循环时注意指标的平均值语义。
+
+---
 
 ## 03 易错点与适用边界
 
 修正原追问：Using filesort 只表示额外排序，不一定慢，也不意味着一定落盘。type 的顺序只是经验线索；小表 ALL 可能优于大范围 ref。key_len 包含类型长度、可空标记等信息，不能单独证明每列都有效过滤；要与范围、条件、实际行数一起看。MySQL 8.4 的 EXPLAIN ANALYZE 使用 TREE 格式。
 
+---
+
 ## 04 面试口述
 
 我重点看实际访问路径、行数估算偏差、loops 和最耗时节点。索引名、filesort 或 ALL 都只是线索，结论要由总工作量和真实耗时支撑。
+
+---
 
 ## 05 关联问题
 
 - [[八股/03-MySQL/02-索引与查询优化/05-MySQL 慢查询如何优化|慢查询优化闭环]]
 
+---
+
 ## 06 官方参考
 
 - [MySQL 8.4 EXPLAIN 与 EXPLAIN ANALYZE](https://dev.mysql.com/doc/refman/8.4/en/explain.html)
 - [MySQL 8.4 索引条件下推](https://dev.mysql.com/doc/refman/8.4/en/index-condition-pushdown-optimization.html)
+
+---
 
 ## 07 所属专题
 

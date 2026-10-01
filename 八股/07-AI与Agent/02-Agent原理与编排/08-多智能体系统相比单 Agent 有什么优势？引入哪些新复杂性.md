@@ -22,15 +22,21 @@ aliases:
 
 口述：“多 Agent 是可选的分解与隔离手段，我会比较同预算的单 Agent 基线，再用交接错误率和总成本判断值不值得拆。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/06-什么时候用单 Agent、多 Agent、Autonomous Agent|什么时候用单 Agent、多 Agent、Autonomous Agent？]]
 - [[八股/07-AI与Agent/09-Agent项目实践/05-Sub-agent 的收益到底是什么|Sub-agent 的收益到底是什么？]]
 - [[八股/07-AI与Agent/12-多Agent复习/01-什么场景下必须上 Multi-Agent,单 Agent 搞不定|什么场景下必须上 Multi-Agent,单 Agent 搞不定?]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
 
 ## 05 所属专题
 

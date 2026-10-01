@@ -27,6 +27,8 @@ B 注入 A 的早期引用时，A 可能还没注入自身依赖、没执行初�
 
 构造器 A 必须先拿到 B、B 又必须先拿到 A 时，还没有可提前暴露的 A 实例，因此不能靠普通三级缓存完成。@Lazy/ObjectProvider 可以延后依赖解析，但如果在初始化过程中立即解引用，仍可能重新触发循环。
 
+---
+
 ## 03 版本与取舍
 
 Spring Boot 2.6 起默认禁止循环引用，当前 spring.main.allow-circular-references 默认仍为 false。把开关设为 true 也只恢复“尝试解决”，不会解决所有构造器、prototype 或不兼容代理循环。更稳妥的是抽出第三个职责、改事件协作或重新划分依赖方向。
@@ -36,9 +38,13 @@ Spring Boot 2.6 起默认禁止循环引用，当前 spring.main.allow-circular-
 
 - [Spring Boot 2.6 起默认禁止循环引用](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.6-Release-Notes#circular-references-prohibited-by-default)
 
+---
+
 ## 04 相关问题与延伸
 
 - [[八股/02-Spring框架/02-Bean生命周期/01-Spring Bean 从实例化到销毁的完整生命周期流程是什么|Spring Bean 从实例化到销毁的完整生命周期流程是什么]]：反向关联：此题引用了本题的机制或边界
+
+---
 
 ## 05 所属专题
 

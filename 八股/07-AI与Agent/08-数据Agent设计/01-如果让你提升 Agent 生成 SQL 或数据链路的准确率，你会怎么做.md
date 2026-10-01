@@ -33,6 +33,8 @@ SQL Parser 能识别语法与语句结构，但真实权限必须由数据库角
 
 结果验收至少有三层：能执行、业务结果正确、符合授权与资源预算。用已知小数据集验证 JOIN 放大、NULL、时区、去重和聚合粒度，再在代表性数据上测性能；不同 SQL 文本可能同样正确，不应只靠字符串精确匹配评分。
 
+---
+
 ## 03 追问与口述
 
 “错了让模型改几次？”按错误类型有限纠正，权限拒绝不能当成改写绕过理由；结果未知先核验。“如何减少幻觉字段？”优先 schema linking、约束解码和执行前解析，仍需回到数据库元数据确认。
@@ -41,14 +43,20 @@ SQL Parser 能识别语法与语句结构，但真实权限必须由数据库角
 
 相关：[[八股/07-AI与Agent/09-Agent项目实践/29-针对 Excel 表格，RAG 召回质量不好怎么改进|表格检索与计算的边界]]。
 
+---
+
 ## 04 关联追问
 
 - [[八股/07-AI与Agent/08-数据Agent设计/05-数仓或数据领域，有没有印象比较深、值得推荐的 Agent 开源项目|数仓或数据领域，有没有印象比较深、值得推荐的 Agent 开源项目？]]
+
+---
 
 ## 05 参考资料
 
 - [PostgreSQL EXPLAIN](https://www.postgresql.org/docs/current/sql-explain.html)
 - [PostgreSQL 行安全策略](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+
+---
 
 ## 06 所属专题
 

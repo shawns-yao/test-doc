@@ -22,16 +22,22 @@ aliases:
 
 追问“回滚会不会恢复已删除的敏感文档？”需要保持权限与删除事实优先于旧索引回切。相关：[[八股/08-RAG与MCP/01-RAG检索增强/19-RAG 缓存|缓存失效]]；[[八股/08-RAG与MCP/01-RAG检索增强/20-RAG 向量库|索引契约]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/03-实习项目中的知识树查询如何保证一致性？如何进行性能优化|实习项目中的知识树查询如何保证一致性？如何进行性能优化？]]
 - [[八股/07-AI与Agent/09-Agent项目实践/07-知识库内容过期或错误，怎么避免误导模型|知识库内容过期或错误，怎么避免误导模型？]]
 - [[八股/08-RAG与MCP/01-RAG检索增强/18-RAG 和 Wiki的区别|RAG 和 Wiki的区别]]
 
+---
+
 ## 04 参考资料
 
 - [pgvector 官方文档](https://github.com/pgvector/pgvector)
 - [Elasticsearch 官方 kNN 文档](https://www.elastic.co/docs/solutions/search/vector/knn)
+
+---
 
 ## 05 直接追问：没有索引快照如何止损
 
@@ -40,6 +46,8 @@ aliases:
 恢复依靠可信源文档、处理配置和可重放的变更记录重建旁路索引，核验文档数、删除标记、ACL、代表性 query 和答案引用后再切流。若只能重建当前版本，应说明无法精确还原事故前结果。回切缓存或旧数据前仍要检查删除与权限撤销，不能为了可用性重新泄露已撤回内容。
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的题目与资料](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/03_RAG/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L309-L321)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。针对原资料未展开的无快照止损追问补充恢复路径，明确无备份时不能承诺精确回滚。 许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
+
+---
 
 ## 06 所属专题
 - [[八股/08-RAG与MCP/01-RAG检索增强/00-RAG检索增强导航|RAG检索增强导航]]

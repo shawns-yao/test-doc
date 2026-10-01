@@ -55,9 +55,13 @@ static ParentNode lcaWithParents(ParentNode p, ParentNode q) {
 }
 ```
 
+---
+
 ## 02 时间和空间复杂度
 
 一般树及存在性检查版：时间 O(n)、递归空间 O(h)；BST 版时间 O(h)、额外空间 O(1)；父指针版时间 O(hp+hq)、额外空间 O(1)。
+
+---
 
 ## 03 参考与关联
 
@@ -65,9 +69,13 @@ static ParentNode lcaWithParents(ParentNode p, ParentNode q) {
 - [LeetCode 236：自身可作祖先且保证两个节点存在](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 - [[八股/12-算法/01-算法题/10-如何在二叉搜索树中求第 k 大的数|如何在二叉搜索树中求第 k 大的数]]：搜索树有序性与一般树祖先关系
 
+---
+
 ## 04 所属专题
 
 - [[八股/12-算法/01-算法题/00-算法题导航|算法题导航]]
+
+---
 
 ## 05 相关问题与延伸
 

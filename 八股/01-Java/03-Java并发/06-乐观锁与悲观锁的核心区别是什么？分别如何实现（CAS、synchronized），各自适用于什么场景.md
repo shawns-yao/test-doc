@@ -25,7 +25,7 @@ aliases:
 
 **适用与权衡：**适合写多、临界区较长或冲突严重的场景，能够降低重试成本，但会带来线程阻塞、上下文切换以及死锁风险。
 
-**CAS 底层机制：**原子类/VarHandle 按其 API 提供原子性及内存排序语义；HotSpot 映射到平台相关原子指令（如 x86 的 cmpxchg），不能只归因于 volatile：比较内存当前值与期望值，相等才写入新值，整个过程原子完成。
+CAS 底层机制：原子类/VarHandle 按其 API 提供原子性及内存排序语义；HotSpot 映射到平台相关原子指令（如 x86 的 cmpxchg），不能只归因于 volatile：比较内存当前值与期望值，相等才写入新值，整个过程原子完成。
 
 **ABA 问题**
 值从 A 变 B 又变回 A，CAS 误判未修改；可用 `AtomicStampedReference` 加版本号解决。
@@ -48,12 +48,16 @@ CAS 比较的是当前状态是否等于期望值，不知道两次读取之间�
 
 重试循环中的计算要可重复，不能每次失败重试都重复扣款、发消息。更新两个相关变量时，分别 CAS 并不能保证跨变量不变量；可以使用锁，或将状态组织成不可变快照并 CAS 引用，但要评估分配和冲突成本。
 
+---
+
 ## 03 取舍与参考
 
 冲突率、临界区成本和饥饿风险比“读多写少”四个字更重要。CAS 只保证一次操作的原子性，使用 CAS 的整体算法不自动获得无锁、无等待或公平性保证；锁内部也可以用 CAS 实现获取路径。
 
 - [java.util.concurrent.atomic：原子变量和内存效果](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/atomic/package-summary.html)
 - [[八股/01-Java/03-Java并发/04-ReentrantLock是什么|ReentrantLock 的等待与超时控制]]
+
+---
 
 ## 04 所属专题
 

@@ -28,14 +28,20 @@ ToT/GoT 的收益取决于候选生成、评价器和预算，多分支不保证
 
 比较两种规划路线：[[八股/07-AI与Agent/02-Agent原理与编排/18-plan-and-solve 和 Tree-of-Thoughts分别是什么|PS 与 ToT]]
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/15-Agent专题复盘/01-题目 1ReAct 和纯 Function Calling 到底有什么区别|题目 1:ReAct 和纯 Function Calling 到底有什么区别?]]
+
+---
 
 ## 04 参考资料
 
 - [ReAct 原论文](https://arxiv.org/abs/2210.03629)
 - [Tree of Thoughts 原论文](https://arxiv.org/abs/2305.10601)
+
+---
 
 ## 05 所属专题
 

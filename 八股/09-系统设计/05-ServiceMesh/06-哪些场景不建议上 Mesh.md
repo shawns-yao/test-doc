@@ -16,11 +16,15 @@ aliases:
 
 **面试追问：**如果不引入 Mesh，如何先做「轻量治理」过渡？
 
+---
+
 ## 02 用需求缺口而不是服务数量决策
 
 没有统一证书身份、跨语言策略和细粒度流量治理需求时，成熟客户端加网关可能已经满足目标。极低延迟、特殊协议、资源非常紧张或已有成熟统一 SDK 的系统，应先验证新增代理的收益；“服务超过多少个就必须上 Mesh”没有通用阈值。
 
 团队若不能负责证书信任、控制面升级、代理版本、配置冲突和应急恢复，Mesh 可能把分散小问题变成平台级事故。也不能因为 Sidecar 开销大就断定全部 Mesh 不适用，ambient 等模式改变资源分摊，但仍有节点级代理与 L7 waypoint 的成本和故障域。
+
+---
 
 ## 03 轻量过渡和退出门槛
 
@@ -30,6 +34,8 @@ aliases:
 
 口述：“我不上 Mesh 的理由是当前需求用较简单方案已满足，或平台能力和成本尚不支持。先补基础治理，等可量化缺口出现，再做有回退路径的试点。”
 
+---
+
 ## 04 依据与关联问题
 
 - [Istio 性能评估](https://istio.io/latest/docs/ops/deployment/performance-and-scalability/)
@@ -37,6 +43,8 @@ aliases:
 - [Istio 应用要求](https://istio.io/latest/docs/ops/deployment/application-requirements/)
 - [[八股/09-系统设计/05-ServiceMesh/01-为什么需要 Service Mesh|Mesh 价值判断]]
 - [[八股/09-系统设计/05-ServiceMesh/02-Sidecar 模式的收益与代价是什么|代理开销实验]]
+
+---
 
 ## 05 所属专题
 

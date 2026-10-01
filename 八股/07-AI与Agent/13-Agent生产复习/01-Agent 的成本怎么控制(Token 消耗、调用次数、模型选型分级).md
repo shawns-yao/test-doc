@@ -20,6 +20,8 @@ aliases:
 
 记忆要点:分级(贵的少用)、瘦身(上下文别塞满)、收敛(别瞎调工具)、打点(先量化再优化)。
 
+---
+
 ## 02 成本口径先纠正
 
 若 token 用量指单次平均，可再乘调用次数；若已经是任务总量，再乘一次就是重复计算。输入、缓存输入、输出以及供应商额外计费项应分别求和，再加搜索工具、检索、沙箱与人工返工成本。
@@ -28,15 +30,21 @@ aliases:
 
 口述：“在质量约束下优化成功成本，设置任务与租户总预算，不能只追最低 token 单价。”完整方案见[[八股/07-AI与Agent/09-Agent项目实践/37-价格，预算|价格与预算]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/07-框架协议与工程化/11-多模型支持架构怎么设计|多模型支持架构怎么设计？]]
 - [[八股/08-RAG与MCP/01-RAG检索增强/19-RAG 缓存|RAG 缓存]]
 
+---
+
 ## 04 参考资料
 
 - [OpenTelemetry 追踪语义约定](https://opentelemetry.io/docs/specs/semconv/general/trace/)
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
 
 ## 05 所属专题
 

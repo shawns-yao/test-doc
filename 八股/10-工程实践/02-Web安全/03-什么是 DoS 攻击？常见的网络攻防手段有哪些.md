@@ -27,13 +27,19 @@ aliases:
 
 DoS 指结果或攻击类别，DDoS 是多个来源分布式实施的一种，不能把所有 DoS 定义成单源。防护的关键是让昂贵操作前有廉价准入检查，并限制每次请求消耗的 CPU、内存、输出和下游调用。压垮公网入口的流量通常必须由上游吸收，单机应用限流无法回收已经耗尽的入口带宽。
 
+---
+
 ## 03 依据与延伸阅读
 
 - [OWASP DoS 防护](https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html)
 
+---
+
 ## 04 相关问题
 
 - [[八股/10-工程实践/05-Linux排障/02-Linux CPU 过载时如何排查和优化|Linux CPU 过载时如何排查和优化]]：流量攻击与资源过载诊断
+
+---
 
 ## 05 所属专题
 

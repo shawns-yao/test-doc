@@ -35,9 +35,13 @@ aliases:
 
 **面试追问：**load average 高但 CPU 不高可能是什么（I/O 等待/不可中断进程）；Full GC 为什么耗 CPU（标记整理算法 + STW 处理）；上下文切换高怎么降（减少线程数/协程/无锁）。
 
+---
+
 ## 02 理解补充与边界校订
 
 原文第一句把高 load 与 CPU 饱和直接等同，后文其实已指出 D 状态例外。还要检查容器 CPU quota 的 throttling：宿主 CPU 不满也可能是本容器受限。先保存时间窗口、线程栈和热点证据，再做最小风险止血；重启会销毁现场。pidstat 需要线程视角参数才看得到线程，iowait 本身也不是某个磁盘故障的直接证明。
+
+---
 
 ## 03 热点线程抓到 WAITING 为什么进程 CPU 仍然高
 
@@ -49,15 +53,21 @@ aliases:
 
 问题来源：[agent_java_offer 原题](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/02_后端/10_网络I_O与发布治理/01_核心问答.md)，Repository contributors，采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)。改动：补答热点线程为 WAITING 的排障追问，明确时间窗口、线程身份和 native/虚拟线程边界。归属及非商业许可说明仅针对本次引用/改编内容，不改变本页其他原有内容的许可。
 
+---
+
 ## 04 依据与延伸阅读
 
 - [Linux cgroup v2 CPU 限制](https://docs.kernel.org/admin-guide/cgroup-v2.html)
+
+---
 
 ## 05 相关问题
 
 - [[八股/10-工程实践/02-Web安全/03-什么是 DoS 攻击？常见的网络攻防手段有哪些|什么是 DoS 攻击？常见的网络攻防手段有哪些]]：流量攻击与资源过载诊断
 - [[八股/10-工程实践/05-Linux排障/01-Linux 中 grep 和 awk 怎么使用|Linux 中 grep 和 awk 怎么使用]]：日志筛查与性能现场分析
 - [[八股/10-工程实践/06-容器与部署/05-排查问题时了解或使用过哪些开源工具|排查问题时了解或使用过哪些开源工具]]：诊断证据与CPU分析
+
+---
 
 ## 06 所属专题
 

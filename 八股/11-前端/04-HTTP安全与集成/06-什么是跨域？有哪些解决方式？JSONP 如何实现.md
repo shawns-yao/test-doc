@@ -17,9 +17,13 @@ aliases:
 
 **追问：**CORS 预检触发条件（自定义头/非 GET POST/特殊 Content-Type）；Cookie 跨域要什么（Credentials + Allow-Credentials）；为什么 JSONP 不能 POST（script src 只发 GET）。
 
+---
+
 ## 02 CORS 不是 CSRF 防线
 
 订正：同源策略主要限制跨源读取，不能阻止所有跨站请求或副作用。符合简单请求条件的请求可在没有预检的情况下发出，服务器缺少允许头时浏览器只是不给脚本读取响应；如果接口已经执行转账或改配置，读不到响应并不能撤销副作用。因此 Cookie 鉴权接口仍需 CSRF Token、来源校验等独立防护。
+
+---
 
 ## 03 凭据与代理的边界
 
@@ -27,14 +31,20 @@ aliases:
 
 开发代理只影响开发环境，生产仍需服务端配置或同源反代。postMessage 应验证消息 origin、source 与数据结构，发送时指定准确 targetOrigin。JSONP 会把第三方返回内容作为脚本执行，只适合可信来源的历史兼容场景，不能用于需要安全隔离的数据接口。
 
+---
+
 ## 04 参考
 
 - [MDN CORS：简单请求与凭据](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS)
 - [OWASP CSRF 防护](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/11-前端/04-HTTP安全与集成/07-前端安全需要关注哪些问题|前端安全需要关注哪些问题]]：跨源访问与浏览器安全边界
+
+---
 
 ## 06 所属专题
 

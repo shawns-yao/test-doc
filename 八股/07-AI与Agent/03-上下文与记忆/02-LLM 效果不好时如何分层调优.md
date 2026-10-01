@@ -30,14 +30,20 @@ L1 Prompt 调优（常见低成本手段，按实际瓶颈选择）：① 定义
 
 口述：“先定位瓶颈，再从可验证且成本较低的干预开始。Prompt、检索、工具、训练是不同杠杆，不是人人必须依次走完。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/04-模型原理与微调/02-LoRAQLoRA 的原理、流程和上线方法|LoRA/QLoRA 的原理、流程和上线方法？]]
+
+---
 
 ## 04 参考资料
 
 - [LangChain 官方概览](https://docs.langchain.com/oss/python/langchain/overview)
 - [LoRA 原论文](https://arxiv.org/abs/2106.09685)
+
+---
 
 ## 05 所属专题
 

@@ -24,6 +24,8 @@ aliases:
 
 统一代理不理解全部业务语义。它可以观察网络错误，却不知道付款超时后是否已扣款；不能随意替非幂等写重试。应用仍需传递调用链上下文、定义 deadline、处理取消和实现业务幂等。
 
+---
+
 ## 03 模式与引入边界
 
 Mesh 不等于每 Pod 必须一个 Sidecar。Istio 有 sidecar 与 ambient 模式，ambient 将基础 L4 安全/遥测放到节点级 ztunnel，需要 L7 策略时使用 waypoint；不同模式的能力和故障范围应按版本验证。
@@ -32,6 +34,8 @@ Mesh 不等于每 Pod 必须一个 Sidecar。Istio 有 sidecar 与 ambient 模�
 
 口述：“Mesh 的价值是统一服务通信治理，代价是多一套平台和数据面。我会保留业务幂等与授权责任，比较 sidecar/ambient 的适配性，通过可撤回试点验证收益。”
 
+---
+
 ## 04 依据与关联问题
 
 - [Istio 数据面模式](https://istio.io/latest/docs/overview/dataplane-modes/)
@@ -39,6 +43,8 @@ Mesh 不等于每 Pod 必须一个 Sidecar。Istio 有 sidecar 与 ambient 模�
 - [Istio 追踪上下文要求](https://istio.io/latest/docs/tasks/observability/distributed-tracing/overview/)
 - [[八股/09-系统设计/05-ServiceMesh/02-Sidecar 模式的收益与代价是什么|Sidecar 开销]]
 - [[八股/09-系统设计/05-ServiceMesh/06-哪些场景不建议上 Mesh|不上 Mesh 的判断]]
+
+---
 
 ## 05 所属专题
 

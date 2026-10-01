@@ -32,15 +32,21 @@ BeanFactory 实现也能显式预实例化单例，ApplicationContext 中的 laz
 
 只手工创建 DefaultListableBeanFactory 并注册 Bean 定义，不代表 @Autowired、事务和各种扩展点都会像完整应用一样自动就绪，必须注册对应处理器。ApplicationContext refresh 负责把这些阶段组织起来。
 
+---
+
 ## 03 面试口述与参考
 
 BeanFactory 提供核心对象工厂契约，ApplicationContext 在其上提供应用级容器体验。是否懒加载是默认行为与配置差异；不要答成“BeanFactory 无法 AOP、ApplicationContext 才能创建对象”。
 
 - [BeanFactory 与 ApplicationContext 的能力对照](https://docs.spring.io/spring-framework/reference/core/beans/beanfactory.html)
 
+---
+
 ## 04 相关问题与延伸
 
 - [[八股/02-Spring框架/01-Spring核心/01-Spring IoC（控制反转）的原理是什么|Spring IoC（控制反转）的原理是什么]]：容器接口能力与IoC依赖管理
+
+---
 
 ## 05 所属专题
 

@@ -18,6 +18,8 @@ RPA:按预定义规则与流程执行重复操作(模拟鼠标键盘/调接口),
 
 记忆要点:能拆目标、会调工具、看得懂结果、错了会重来 = Agent;只会答 = Chatbot;只会照脚本 = RPA。
 
+---
+
 ## 02 不把产品名称当严格能力边界
 
 Chatbot 描述对话交互形态，可以是多轮、带检索和工具；RPA 描述流程自动化，也可能结合 AI。因此不能以“有没有聊天界面”或“有没有调一次工具”单独判断 Agent。更清楚的比较维度是：谁决定下一步、如何使用环境反馈、执行范围是否动态。
@@ -26,13 +28,19 @@ Chatbot 描述对话交互形态，可以是多轮、带检索和工具；RPA �
 
 口述：“这些系统可以融合，我会按控制权和反馈闭环解释差异，而不是宣称 Chatbot 天生不会用工具。”相关：[[八股/07-AI与Agent/02-Agent原理与编排/01-Agent 的定义与核心组件？软件 Agent 与具身 Agent 有何不同|Agent 定义]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/11-Chain、Agent、Workflow 三者怎么区分|Chain、Agent、Workflow 三者怎么区分？]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
 
 ## 05 所属专题
 

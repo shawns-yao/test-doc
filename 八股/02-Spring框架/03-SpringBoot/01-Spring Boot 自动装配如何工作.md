@@ -40,9 +40,13 @@ EnableAutoConfiguration 导入自动配置选择逻辑，读取自动配置候�
 
 ConditionalOnClass 检查依赖类是否在类路径，ConditionalOnMissingBean 让用户自定义 Bean 优先，ConditionalOnProperty 根据配置开关选择。starter 主要整理依赖；自动配置依赖这些条件作决定，所以“加 starter”不是“启动所有功能”。
 
+---
+
 ## 04 为什么我的自动配置没有生效
 
 先看依赖与候选是否存在，再看 exclusions、条件不匹配原因、用户已有 Bean、配置值以及配置类的先后关系。启用 debug 可查看条件评估报告；有 Actuator 时可在合适权限控制下查看 conditions 端点。不要只反复添加 ComponentScan，自动配置导入和业务组件扫描是两条不同路径。
+
+---
 
 ## 05 口述版与关联
 
@@ -51,9 +55,13 @@ Spring Boot 通过约定、依赖和条件式自动配置减少重复配置，�
 - [Boot 自动配置用法与条件报告](https://docs.spring.io/spring-boot/reference/using/auto-configuration.html)
 - [Boot 自定义自动配置、imports 与条件注解](https://docs.spring.io/spring-boot/reference/features/developing-auto-configuration.html)
 
+---
+
 ## 06 相关问题与延伸
 
 - [[八股/02-Spring框架/01-Spring核心/09-配置治理的最佳实践|配置治理的最佳实践]]：外部配置与自动装配的条件
+
+---
 
 ## 07 所属专题
 

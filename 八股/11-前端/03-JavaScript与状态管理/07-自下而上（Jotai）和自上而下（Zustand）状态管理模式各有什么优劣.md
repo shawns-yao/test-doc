@@ -29,15 +29,21 @@ aliases:
 
 **追问：**为什么 Zustand 比 Context 性能好（selector 订阅 vs 全量重渲染）；原子派生是什么（derived atom 自动计算）；持久化怎么做（persist 中间件）。
 
+---
+
 ## 02 Store 与比较策略订正
 
 Jotai 不是“没有 store”：atom 通常是状态定义，具体值存在 store 中，既有默认 store，也可创建独立 store 并用 Provider 隔离。底层订阅粒度细并不自动保证全部应用更快，派生计算和 atom 划分仍需实测。
 
 Zustand 默认不会自动对所有 selector 结果做浅比较；当前官方指南按 Object.is 描述结果变化，返回新对象或数组时需使用稳定引用、useShallow 或相应比较 API。Zustand v5 对不稳定 selector 输出有额外注意事项，不能把 v4 的自定义 equalityFn 用法直接照搬。
 
+---
+
 ## 03 如何做取舍
 
 比较跨域业务更新是否集中、派生依赖是否复杂、是否需要请求隔离、调试和持久化迁移。两种模式都能组织大应用，也都可能过度全局化。持久化缓存只应存可恢复且适合落盘的数据，并考虑版本迁移和登录用户切换，不能把持久化自动等同安全会话管理。
+
+---
 
 ## 04 参考
 
@@ -45,9 +51,13 @@ Zustand 默认不会自动对所有 selector 结果做浅比较；当前官方�
 - [Zustand selector 与 useShallow 官方指南](https://github.com/pmndrs/zustand/blob/main/docs/learn/guides/prevent-rerenders-with-use-shallow.md)
 - [Zustand v5 迁移说明](https://github.com/pmndrs/zustand/blob/main/docs/reference/migrations/migrating-to-v5.md)
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/11-前端/03-JavaScript与状态管理/06-React 状态管理怎么做|React 状态管理怎么做]]：状态管理机制与库选型
+
+---
 
 ## 06 所属专题
 

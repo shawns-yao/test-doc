@@ -12,6 +12,8 @@ aliases:
 
 下面以 Java `KafkaConsumer`、自动分配分区的普通消费组、手动提交位点为背景。使用 Spring Kafka 等框架时先遵守容器的停止与确认约定；不能把原生客户端线程模型直接套进框架回调。
 
+---
+
 ## 02 停机流程与线程边界
 
 1. **收到停止信号**：将应用切为 DRAINING，停止业务入口继续派发任务。对 Kafka 负载，仅摘除 HTTP readiness 不会自动停止消费，还要通知消费循环
@@ -22,11 +24,15 @@ aliases:
 
 `KafkaConsumer` 非线程安全，`wakeup()` 是可从外部线程调用的专门例外；只在确认属于停机请求时吸收 `WakeupException`，其他情况应传播或报告。它也可能影响下一次可唤醒调用，所以关闭路径不能简单假定“只有 poll 会抛”。依据：[KafkaConsumer 线程模型与停止模式](https://kafka.apache.org/41/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html)。
 
+---
+
 ## 03 停止业务拉取不等于长时间不 poll
 
 工作池仍在执行时，如果消费线程直接阻塞等待所有任务，就可能超过 `max.poll.interval.ms` 并失去分区。通常让消费者暂停当前分区后继续短周期 `poll`，处理组协调和完成通知；暂停限制记录交付，不是退出消费组。停机期间若又分到新分区，也应按 DRAINING 状态暂停，不能重新开始接单。
 
 调整 `max.poll.records` 可限制每次交给应用的记录数量，但不是总内存或底层预取字节数的硬上限。批次大小、最慢任务时长、消费循环间隔、组超时与进程退出预算要共同设计。静态成员的分区重新分配时机以及新旧消费组协议的心跳配置不同，不能统一承诺“close 后立即由别人接管”。依据：[消费者配置与静态成员边界](https://kafka.apache.org/41/configuration/consumer-configs/)。
+
+---
 
 ## 04 位点只越过已经完成的记录
 
@@ -38,6 +44,8 @@ aliases:
 
 数据库写入和 Kafka 位点不在同一事务时，“数据库已提交、位点未确认”窗口始终存在。把业务幂等记录与数据库变更原子提交；若使用 Kafka 事务处理 Kafka 到 Kafka 的链路，应把输出与输入位点放进事务，停机时完成或中止该事务，而非另外执行普通位点提交。语义详见关联问题。
 
+---
+
 ## 05 再均衡与失去所有权怎么处理
 
 `onPartitionsRevoked` 中只处理被撤销的分区：停止派发，在预算内收束在途工作并保存可确认进度。协作式再均衡可能只撤销一部分分区，不能把全部进度随意清掉。回调是通知机制，抛异常不能否决这次分配变更。
@@ -46,6 +54,8 @@ aliases:
 
 不要把“停止工作线程”当成必然成功：中断只能协作处理，外部调用超时也不代表服务端没执行。测试中应同时启动新旧消费者，验证旧任务晚完成不会重复生效或覆盖新状态。依据：[ConsumerRebalanceListener 的 revoked、lost 与回调边界](https://kafka.apache.org/41/javadoc/org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html)。
 
+---
+
 ## 06 关闭预算与版本差异
 
 停机总预算应覆盖停止派发、在途处理、提交和资源关闭，并给部署系统的强制终止留余量。不能让工作池无限 `awaitTermination`，也不能在任务尚在写数据库时先关连接池。
@@ -53,6 +63,8 @@ aliases:
 Kafka 4.1 中 `close(Duration)` 已弃用，使用 `close(CloseOptions.timeout(remaining))`，并根据目标选择离组行为；老版本按其支持的 API 处理。静态成员短暂重启与永久下线的目标不同，选择保留组身份可能减少再均衡，却也会延迟其他实例接管。依据：[CloseOptions API](https://kafka.apache.org/41/javadoc/org/apache/kafka/clients/consumer/CloseOptions.html)。
 
 `close` 不是替应用排空工作池的接口，`wakeup()` 也不能中断它。Kafka 4.1 文档还说明用户回调执行时间不计入 close 的超时，所以回调本身必须有界，不能把 close 参数当作整个 JVM 必然退出的硬时限。自动提交若仍开启，还可能在关闭阶段确认当前位置，因此本方案明确关闭自动提交并自行管理成功边界。
+
+---
 
 ## 07 故障演练与验收
 
@@ -69,16 +81,22 @@ Kafka 4.1 中 `close(Duration)` 已弃用，使用 `close(CloseOptions.timeout(r
 
 面试口述：“先停止接新工作，再有界排空，按分区提交没有缺口的成功进度，最后在消费者所属线程关闭。长任务要暂停分区但维持消费循环；再均衡后不能确认失去所有权的工作。超时和强杀交给至少一次加业务幂等恢复。”
 
+---
+
 ## 08 来源与改写说明
 
 题目线索来自 [agent_java_offer 的 AIGC 内容平台题单](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/05_项目表达/06_AIGC内容平台/01_核心问答.md)中“你会怎么设计一个支持优雅停机的消费者”，作者为 Repository contributors，原材料采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)。
 
 本页将简短答题抓手改写为完整专题，依据 Apache Kafka 4.1 官方资料核对 API，补充分区完成边界、再均衡、退出预算与故障演练；不沿用原材料的面试命中率或公司面经推断。原题引用/改编部分保留上述署名及非商业许可要求；这不改变知识库其他独立原有内容的许可。
 
+---
+
 ## 09 关联问题
 
 - [[八股/05-消息队列与搜索/03-Kafka与消息语义/01-Kafka 怎么使用？如何保证消息可靠投递和消费|可靠投递与安全提交位点]]：停机是业务成功和位点确认之间的重要故障窗口
 - [[八股/05-消息队列与搜索/03-Kafka与消息语义/03-至少一次与恰好一次怎么选？消费幂等如何做|重投、消费幂等与事务边界]]：优雅退出减少重复，幂等保证重复不再生效
+
+---
 
 ## 10 所属专题
 

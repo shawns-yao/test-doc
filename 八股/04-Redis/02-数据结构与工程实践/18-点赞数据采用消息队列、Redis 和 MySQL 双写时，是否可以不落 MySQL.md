@@ -15,28 +15,40 @@ aliases:
 
 **只依赖 Redis 的风险：**节点故障、AOF/RDB 恢复点、消息丢失和误删会导致计数回退或关系丢失。即使业务允许最终一致，也应明确保留周期、恢复流程、对账指标和最大可接受数据损失。
 
+---
+
 ## 02 理解机制与追问
 
 不一定必须是 MySQL，但必须明确哪份是可恢复的事实。只有点赞总数无法回答谁点过赞、取消的是哪次点赞，也难以纠正重复消息。保存 (用户,对象) 的状态及版本，或保存可回放的事件日志，再派生计数，才能对重复和乱序做确定处理。
+
+---
 
 ## 03 易错点与适用边界
 
 Redis 与 MQ 分别写入也有双写空窗：Redis 成功后发送消息失败会漏事实，先发后写则可能出现短期显示偏差。选择一个权威提交点加可靠投递，消费者基于状态迁移而非盲目加减计数。MQ 保留时间必须足够重建，过期日志不再能补全历史。
 
+---
+
 ## 04 面试口述
 
 可不落 MySQL，但不能没有明确的持久化事实源。关系状态、幂等版本、可靠投递和回放期限决定可恢复性，计数只是可重建视图。
+
+---
 
 ## 05 关联问题
 
 - [[八股/04-Redis/02-数据结构与工程实践/03-Redis 和 MySQL 的数据一致性如何保证|跨系统双写]]
 - [[八股/04-Redis/02-数据结构与工程实践/09-怎么解决秒杀库存超卖问题|扣减与状态机]]
 
+---
+
 ## 06 官方参考
 
 - [Redis RDB 与 AOF 持久化](https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/)
 - [Redis 事务与错误处理](https://redis.io/docs/latest/develop/using-commands/transactions/)
 - [MySQL 8.4 binlog 参数](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html)
+
+---
 
 ## 07 所属专题
 

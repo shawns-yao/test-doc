@@ -22,6 +22,8 @@ aliases:
 
 BIO/NIO/AIO 要分别讲调用是否等待，以及通知的是就绪还是完成。Java NIO 包含阻塞模式 Channel，不能把整个包名直接等同于非阻塞；Selector 才是典型多路复用组件。虚拟线程可用阻塞写法提高大量等待任务的并发密度，因此「一连接一线程必然不可扩展」也需限定为平台线程模型。
 
+---
+
 ## 03 为什么不能简单说 AIO 一定比 NIO 更好
 
 AIO 交付的是完成通知，但异步接口背后仍可能用线程池完成等待、执行或派发回调；具体路径由操作系统和 JDK provider 决定。`AsynchronousChannelGroup` 本身关联线程池，完成处理器应快速返回，不能把“异步”理解成完全没有线程成本。依据：[Java 21 AsynchronousChannelGroup](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/channels/AsynchronousChannelGroup.html)。
@@ -30,13 +32,19 @@ AIO 交付的是完成通知，但异步接口背后仍可能用线程池完成�
 
 问题来源：[agent_java_offer 原题](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/02_后端/10_网络I_O与发布治理/01_核心问答.md)，Repository contributors，采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)。改动：补答原题中的 AIO 选型追问，保留平台与实现边界，不把采用率当作未经验证的事实。归属及非商业许可说明仅针对本次引用/改编内容，不改变本页其他原有内容的许可。
 
+---
+
 ## 04 依据与延伸阅读
 
 - [Java Selector API](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/channels/Selector.html)
 
+---
+
 ## 05 相关问题
 
 - [[八股/06-计算机基础/06-网络原理与IO/07-零拷贝是什么？用户态协议栈能解决什么问题|零拷贝是什么？用户态协议栈能解决什么问题]]：拷贝成本与通知模型
+
+---
 
 ## 06 所属专题
 

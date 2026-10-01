@@ -19,11 +19,15 @@ aliases:
 
 **面试追问：**COW 的读操作有没有锁（没有）；和 synchronizedList 的区别（读无锁 vs 读加锁）；为什么迭代器不抛 ConcurrentModificationException（快照迭代）。
 
+---
+
 ## 02 包装后为什么遍历仍可能出错
 
 synchronizedList 将单个方法调用串行化，但迭代器跨多次方法访问，遍历期间必须按 API 约定锁住包装后的列表，并要求所有线程都通过同一包装器操作。原 ArrayList 引用若仍被旁路修改，包装器保护就失效。contains 后 add 也不是天然原子；需要同一锁或专用原子 API。
 
 COW 写线程相互协调后发布新数组，读线程看到的是某个完整数组版本。旧迭代器持有旧数组直到不再使用，因此大数组、长时间迭代和频繁写入会增加内存压力；快照只复制元素引用，不把元素深拷贝成不可变对象。其迭代器不支持 remove/set/add。
+
+---
 
 ## 03 面试口述版与参考
 
@@ -32,9 +36,13 @@ COW 写线程相互协调后发布新数组，读线程看到的是某个完整�
 - [Collections.synchronizedList：遍历同步要求](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collections.html#synchronizedList(java.util.List))
 - [CopyOnWriteArrayList：快照迭代](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/CopyOnWriteArrayList.html)
 
+---
+
 ## 04 相关问题与延伸
 
 - [[八股/01-Java/02-Java集合/03-ArrayList 和 LinkedList 区别？往 ArrayList 中间插入的时间复杂度？怎么优化|ArrayList 和 LinkedList 区别？往 ArrayList 中间插入的时间复杂度？怎么优化]]：列表选择与线程安全代价
+
+---
 
 ## 05 所属专题
 

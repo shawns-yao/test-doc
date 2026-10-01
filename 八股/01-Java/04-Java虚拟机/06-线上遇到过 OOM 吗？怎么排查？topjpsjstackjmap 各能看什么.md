@@ -39,6 +39,8 @@ aliases:
 
 jstat 是周期统计，GC 日志给出事件及耗时，heap dump 给出对象图，thread dump 给出线程等待。不能用线程 dump 证明对象泄漏，也不能用 heap dump 直接代表进程 RSS。建议以 jcmd help 确认目标 JVM 支持的诊断命令。
 
+---
+
 ## 03 现场代价与面试表达
 
 GC.heap_dump、对象直方图可能触发停顿或 GC，先核对磁盘空间、服务副本和诊断窗口；NMT 必须预先启用且不是所有 native 内存的总账。若没有亲自经历生产 OOM，应按“我的排查步骤”回答，不把演练或假设说成真实项目经历。
@@ -46,9 +48,13 @@ GC.heap_dump、对象直方图可能触发停顿或 GC，先核对磁盘空间�
 - [jcmd 命令：影响级别与诊断参数](https://docs.oracle.com/en/java/javase/21/docs/specs/man/jcmd.html)
 - [Oracle 诊断工具](https://docs.oracle.com/en/java/javase/21/troubleshoot/diagnostic-tools.html)
 
+---
+
 ## 04 相关问题与延伸
 
 - [[八股/01-Java/04-Java虚拟机/14-OOM 定位的第一步是什么|OOM 定位的第一步是什么]]：反向关联：此题引用了本题的机制或边界
+
+---
 
 ## 05 所属专题
 

@@ -22,6 +22,8 @@ CrewAI:角色化 Crew 分工,声明式简单,适合轻量多角色任务,也提�
 
 记忆要点:要可控上 LangGraph、要快速上 LangChain、要对话式多体用 AutoGen、要轻量分工用 CrewAI;有真实经历时讲具体证据；未使用则说明研究或实验范围。
 
+---
+
 ## 02 选型陈述需要版本和证据
 
 不能把 LangGraph 称为普遍“最好、生产首选”，也不能把其他框架统称原型。当前 LangChain 高层 Agent 基于 LangGraph，CrewAI 有支持状态与控制流的 Flows；具体能力和维护状态需看选定版本。
@@ -30,14 +32,20 @@ CrewAI:角色化 Crew 分工,声明式简单,适合轻量多角色任务,也提�
 
 口述模板：“因为任务需要某种控制能力，比较后选了方案 A；已验证的好处是 X，未解决的代价是 Y。”详见[[八股/07-AI与Agent/07-框架协议与工程化/02-AgentRAG 框架如何选型|框架选型维度]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/07-框架协议与工程化/03-LangChain 和 LangGraph 的关系与区别|LangChain 和 LangGraph 的关系与区别？]]
+
+---
 
 ## 04 参考资料
 
 - [LangChain 官方概览](https://docs.langchain.com/oss/python/langchain/overview)
 - [CrewAI Flows](https://docs.crewai.com/en/concepts/flows)
+
+---
 
 ## 05 所属专题
 

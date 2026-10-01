@@ -18,9 +18,13 @@ aliases:
 
 **面试追问：**跨分片查询延迟高时，先改 SQL 还是先改架构？如何处理一个分片失败时的部分结果和重试？
 
+---
+
 ## 02 理解机制与追问
 
 可合并性决定聚合方案：SUM/COUNT 相加，MIN/MAX 取极值，AVG 必须合并总和与计数后相除，不能平均各分片平均值。COUNT DISTINCT 需要全局去重或具备可合并性质的近似结构，不能直接相加。跨片 Top K 要在相同过滤与全局稳定排序规则下取候选再归并。
+
+---
 
 ## 03 跨分片查询慢时先改 SQL 还是架构
 
@@ -30,13 +34,19 @@ aliases:
 
 本节补答 [agent_java_offer 分库分表题单](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/02_后端/06_分库分表与架构治理/01_核心问答.md)的直接追问，Repository contributors，[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)。改动：原题未展开诊断顺序，此处补充按瓶颈决策的工程分析；许可说明仅针对本次引用/改编，不改变其他原有内容。
 
+---
+
 ## 04 易错点与适用边界
 
 “每片 offset+limit 再归并”适用于分片互不重叠的行集合及可统一比较的排序；如果排序基于跨片聚合值，局部 Top K 未必覆盖全局答案。局部快照不会自动成为全局同一时刻快照。部分结果可用于展示型报表时要明确标记，账务等必须拒绝不完整结果。
 
+---
+
 ## 05 面试口述
 
 我先判断能否共分片；不能时做批量查和可合并聚合，限制扇出。分页还要统一排序和游标，精确聚合则必须保留足够的中间统计量及一致性语义。
+
+---
 
 ## 06 关联问题
 
@@ -49,10 +59,14 @@ aliases:
 - [[八股/03-MySQL/06-高可用与扩展/04-分片键怎么选才能避免热点|分片与热点]]
 - [[八股/03-MySQL/02-索引与查询优化/08-SQL 分页怎么写？深分页有什么问题|游标分页]]
 
+---
+
 ## 07 官方参考
 
 - [Vitess 在线重新分片流程](https://vitess.io/docs/25.0/reference/vreplication/reshard/)
 - [MySQL 8.4 窗口函数](https://dev.mysql.com/doc/refman/8.4/en/window-function-descriptions.html)
+
+---
 
 ## 08 所属专题
 

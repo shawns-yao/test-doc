@@ -24,13 +24,19 @@ Harness 是模型外围的运行环境与控制体系，包含工具契约、状
 
 口述：“我把模型放进能获取真实反馈、可恢复且有安全边界的系统里，并用任务验收证明改动有效。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/07-框架协议与工程化/15-Claude Code 架构设计的启发|Claude Code 架构设计的启发？]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 长任务 Harness 实践](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
+
+---
 
 ## 05 直接追问：如何组织 Agent 可查找的工程知识
 
@@ -39,6 +45,8 @@ Harness 是模型外围的运行环境与控制体系，包含工具契约、状
 OpenAI 的 Harness 工程案例明确采用简短的 AGENTS.md 入口和结构化 docs，并用检查维护文档链接与时效。可迁移的设计是“可定位、可校验、随代码更新”，不要求照抄某个行数或目录。项目自身仍需决定知识负责人、可信来源及访问权限。[官方工程案例](https://openai.com/index/harness-engineering/)
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的题目与资料](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/09_%E8%BF%BD%E5%8A%A0%E8%A1%A5%E5%85%85/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L18-L33)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。补回源资料的结构化知识入口与渐进披露，并以官方案例核验；不将他人项目成果写作个人经历。 许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
+
+---
 
 ## 06 所属专题
 - [[八股/07-AI与Agent/07-框架协议与工程化/00-框架协议与工程化导航|框架协议与工程化导航]]

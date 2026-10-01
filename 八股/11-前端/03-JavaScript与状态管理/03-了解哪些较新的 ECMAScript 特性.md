@@ -37,13 +37,19 @@ at 负数索引访问属 ES2022；findLast 从后查找属 ES2023。
 
 **追问：**?? 和 || 的区别（0/'' 是否兜底）；allSettled 和 all 的区别（是否短路）；怎么确认特性可用（CanIUse + 目标浏览器矩阵）。
 
+---
+
 ## 02 标准归属与版本订正
 
 核验于 2026-09-30：Array.at 属于 ES2022，findLast/findLastIndex 属于 ES2023；structuredClone 是 HTML 标准定义的宿主 API，不是 ES2022 的语言内建。Record/Tuple 提案已于 2025-04 撤回并归档，不能继续说“正在 Stage 2 推进”。Decorators 应以 TC39 当前提案列表为准，本次核验列表列于 Stage 2.7，历史文章的 Stage 3 标签不可直接沿用。
 
+---
+
 ## 03 讲特性时带上失效条件
 
 可选链只处理 null/undefined，不会吞掉 getter 自身抛出的异常；BigInt 不能直接与 Number 混合进行大多数算术运算；Promise.all 的拒绝不会自动取消其他任务。structuredClone 可处理循环引用和部分内建类型，但不是任意对象的万能复制工具，函数等不可克隆，原型与属性描述符也不能假设完整保留。
+
+---
 
 ## 04 参考
 
@@ -52,10 +58,14 @@ at 负数索引访问属 ES2022；findLast 从后查找属 ES2023。
 - [TC39：Record/Tuple 撤回说明](https://github.com/tc39/proposal-record-tuple/issues/394)
 - [TC39 当前提案清单](https://github.com/tc39/proposals)
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/11-前端/05-场景与表达/04-HardMan 这类任务如何分析和实现|HardMan 这类任务如何分析和实现]]：链式异步任务与语言能力
 - [[八股/11-前端/03-JavaScript与状态管理/02-ES6 的含义是什么？ECMAScript 语言规范如何迭代|ES6 的含义是什么？ECMAScript 语言规范如何迭代]]：规范演进与具体特性状态
+
+---
 
 ## 06 所属专题
 

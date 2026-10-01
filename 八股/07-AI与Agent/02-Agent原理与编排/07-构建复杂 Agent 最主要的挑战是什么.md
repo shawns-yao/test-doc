@@ -22,14 +22,20 @@ aliases:
 
 追问“先优化哪项？”先按业务严重性和失败占比排序，从高损失、可复现故障改起，不预设模型能力一定是瓶颈。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/04-Agent 当前的局限是什么|Agent 当前的局限是什么？]]
 - [[八股/07-AI与Agent/14-Agent架构复习/02-如果任务要跑几十步才能完成,怎么保证 Agent 不跑偏、不断链|如果任务要跑几十步才能完成,怎么保证 Agent 不跑偏、不断链?]]
 
+---
+
 ## 04 参考资料
 
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
+
+---
 
 ## 05 所属专题
 

@@ -29,6 +29,8 @@ aliases:
 
 因此“写入返回成功”与“全文搜索看得到”可以同时出现不同状态。它们分别由可靠写入链路和搜索器刷新控制。依据：[近实时搜索](https://www.elastic.co/docs/manage-data/data-store/near-real-time-search)、[Translog 与 flush](https://www.elastic.co/docs/reference/elasticsearch/index-settings/translog)。
 
+---
+
 ## 03 从确认语义解释一致性
 
 主分片先校验并执行写入，再向当前 in-sync 副本复制；某副本失败时，要由集群完成相应的同步集合变更后才能在规定条件下继续确认。不能把它描述成任意选择“确认一个还是确认多个副本”的 Kafka acks 模型。wait_for_active_shards 是开始处理前的活跃副本数量检查，也不等于事后绝对保证所有配置副本都写成功。
@@ -36,6 +38,8 @@ aliases:
 refresh=wait_for 通常等待发生刷新，refresh=true 主动刷新；后者高频使用会产生大量小 segment，增加合并成本。wait_for 也受资源、刷新设置和监听器上限影响，不是无代价强一致开关。按 ID 的实时 GET 与 search 的近实时语义应分别解释。
 
 依据：[ES 主副本写入协议](https://www.elastic.co/docs/deploy-manage/distributed-architecture/reading-and-writing-documents)、[refresh 参数](https://www.elastic.co/docs/reference/elasticsearch/rest-apis/refresh-parameter)。
+
+---
 
 ## 04 查询链路与口述
 
@@ -45,11 +49,15 @@ QUERY_THEN_FETCH 的第一阶段只收集排序所需候选及元信息，第二
 
 追问：并发修改怎样避免覆盖？对常规支持序列号的索引，用读取获得的 if_seq_no 和 if_primary_term 做乐观并发检查，冲突后重新读取并按业务决定重试。依据：[乐观并发控制](https://www.elastic.co/docs/reference/elasticsearch/rest-apis/optimistic-concurrency-control)。
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/05-消息队列与搜索/04-Elasticsearch/02-Elasticsearch 有哪些核心特性|Elasticsearch 有哪些核心特性]]：搜索能力背后的写入和查询链路
 - [[八股/05-消息队列与搜索/04-Elasticsearch/03-Elasticsearch 分词器有哪些？为什么选择 IK 分词器|Elasticsearch 分词器有哪些？为什么选择 IK 分词器]]：文本分析影响索引与查询
 - [[八股/05-消息队列与搜索/04-Elasticsearch/05-Elasticsearch 深分页怎么解决|Elasticsearch 深分页怎么解决]]：检索执行与分页一致性
+
+---
 
 ## 06 所属专题
 

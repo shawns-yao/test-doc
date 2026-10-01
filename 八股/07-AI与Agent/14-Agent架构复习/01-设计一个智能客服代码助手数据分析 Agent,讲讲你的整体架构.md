@@ -24,6 +24,8 @@ aliases:
 
 记忆要点:分层讲结构 + 场景串流程 + 主动谈取舍;系统设计题不怕简单,怕没有分层和闭环。
 
+---
+
 ## 02 用具体任务解释架构
 
 可改编客服例子：用户询问订单状态，先验证身份与订单归属，再查权威订单 API；只有解释规则时检索知识库。订单实时状态不应从旧向量片段推断。查不到时区分无权限、数据不存在、依赖失败与信息不足，给不同退路。
@@ -32,10 +34,14 @@ aliases:
 
 口述：“先串通一个带授权和验收的真实流程，再解释分层与扩展，而不只画组件盒子。”相关：[[八股/07-AI与Agent/09-Agent项目实践/22-从 0 到 1 搭 AI 后端服务怎么拆|AI 后端服务]]。
 
+---
+
 ## 03 参考资料
 
 - [MCP 官方安全实践](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices)
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
 
 ## 04 所属专题
 

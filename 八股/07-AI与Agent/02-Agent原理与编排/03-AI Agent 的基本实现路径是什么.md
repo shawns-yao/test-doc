@@ -26,15 +26,21 @@ aliases:
 
 追问“模型能直接执行吗？”模型通常只产生调用意图，真正的执行和授权由运行时负责。关联：[[八股/07-AI与Agent/02-Agent原理与编排/12-Agent 工具调用的完整业务流程|工具完整链路]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/36-实现Agent的思路|实现Agent的思路]]
 - [[八股/07-AI与Agent/10-Agent基础复习/02-一个完整的 Agent 一般包含哪几个核心模块(记忆、规划、工具调用、执行反馈这套说不清楚基本就凉半截)|一个完整的 Agent 一般包含哪几个核心模块?(记忆、规划、工具调用、执行反馈这套说不清楚基本就凉半截)]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
 - [MCP 2025-11-25 Tools 规范](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
+
+---
 
 ## 05 所属专题
 

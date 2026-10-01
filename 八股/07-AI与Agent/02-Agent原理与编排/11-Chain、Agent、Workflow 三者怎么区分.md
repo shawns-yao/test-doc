@@ -26,15 +26,21 @@ LangGraph 可以实现确定性工作流或 Agent，不是只服务多 Agent。�
 
 口述：“固定规则尽量写成可测试流程，不确定环节留给模型，执行边界仍由程序控制。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/25-Workflow 和 Agent 怎么选|Workflow 和 Agent 怎么选？]]
 - [[八股/07-AI与Agent/10-Agent基础复习/01-Agent 和普通 Chatbot、和传统 RPA 的本质区别是什么|Agent 和普通 Chatbot、和传统 RPA 的本质区别是什么?]]
 
+---
+
 ## 04 参考资料
 
 - [LangChain 官方概览](https://docs.langchain.com/oss/python/langchain/overview)
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
 
 ## 05 所属专题
 

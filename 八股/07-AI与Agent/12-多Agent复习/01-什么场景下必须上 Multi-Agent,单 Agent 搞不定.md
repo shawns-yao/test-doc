@@ -16,6 +16,8 @@ aliases:
 
 记忆要点:上多体的理由 = 角色分工 / 上下文隔离 / 互相校验 / 并行,不是"听起来高级"。
 
+---
+
 ## 02 “必须”通常需要额外条件
 
 多数技术任务不存在仅凭角色数就证明单 Agent 绝对做不到的结论。上下文分块、外部状态、工具和串行工作流也能处理复杂任务；多 Agent 常是并行、权限隔离或专业化的工程选择。
@@ -24,13 +26,19 @@ aliases:
 
 口述：“我会说明为什么需要分工或隔离，而不把 Multi-Agent 当复杂任务的必然答案。”详见[[八股/07-AI与Agent/02-Agent原理与编排/08-多智能体系统相比单 Agent 有什么优势？引入哪些新复杂性|收益与复杂性]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/06-什么时候用单 Agent、多 Agent、Autonomous Agent|什么时候用单 Agent、多 Agent、Autonomous Agent？]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
 
 ## 05 所属专题
 

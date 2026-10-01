@@ -30,19 +30,27 @@ SFT 本身属于后训练，原文“三阶段”应理解为便于介绍的“�
 
 RLAIF 指利用 AI 反馈构造评价或偏好，不限定某个教师模型；效果、成本和与人类反馈的一致性取决于任务与验证，不能一概声称效果相当。系统提示词会影响行为，但并非可证明的最强约束，权限仍须在运行时落实。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/04-模型原理与微调/06-BERT 与 LLM 的区别|BERT 与 LLM 的区别？]]
 - [[八股/07-AI与Agent/04-模型原理与微调/07-NLP、TFRecord、TensorFlow 与 Transformer 的关系|NLP、TFRecord、TensorFlow 与 Transformer 的关系？]]
+
+---
 
 ## 04 参考资料
 
 - [BERT 原论文](https://arxiv.org/abs/1810.04805)
 - [DPO 原论文](https://arxiv.org/abs/2305.18290)
 
+---
+
 ## 05 补充编码器模型的应用例
 
 原稿中的 BERT 应用例仍有参考价值：文本理解、查询与文档的相关性判断、意图识别等任务可利用编码器表征，再接分类或排序头并用合适数据训练。它们说明不同任务对表示与输出的需求，不能据此认为基础 BERT 无需适配就能直接完成所有业务任务。
+
+---
 
 ## 06 直接追问：PPO 为什么复杂，DPO 简化了什么
 
@@ -54,6 +62,8 @@ RLAIF 指利用 AI 反馈构造评价或偏好，不限定某个教师模型；�
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的题目与资料](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/05_%E6%A8%A1%E5%9E%8B%E8%B0%83%E4%BC%98%E4%B8%8E%E5%BE%AE%E8%B0%83/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L9-L54)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。补充 PPO 与 DPO 的工程复杂度来源和经验边界；将原文普遍优越性表述限定到具体训练设置。 许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
 
+---
+
 ## 07 直接追问：ORPO 与 DPO 有什么区别
 
 经典 DPO 使用偏好对，并相对一个冻结参考策略优化较优与较差回答的概率关系；没有显式奖励模型，不代表没有参考模型。ORPO（Odds Ratio Preference Optimization）则把较优回答的 SFT 负对数似然，与区分较优/较差回答的 odds-ratio 偏好损失合在同一训练目标中，不要求额外参考模型。
@@ -62,11 +72,15 @@ RLAIF 指利用 AI 反馈构造评价或偏好，不限定某个教师模型；�
 
 来源与改写说明：本节根据 [goehou/agent_java_offer 仓库贡献者的题目线索](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/05_%E9%A1%B9%E7%9B%AE%E8%A1%A8%E8%BE%BE/02_%E4%BA%A4%E6%98%93Agent%E4%B8%8E%E9%A3%8E%E6%8E%A7%E5%B9%B3%E5%8F%B0/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。将源资料只列名的 ORPO 补为后训练体系的直接追问，按原论文区分参考模型与训练目标。 仅本节对应引入内容，原笔记其他内容许可不变。
 
+---
+
 ## 08 推理工程追问
 
 - [[八股/07-AI与Agent/04-模型原理与微调/08-大模型推理如何优化显存、时延与吞吐|大模型推理如何优化显存、时延与吞吐]]
 
 来源与改写说明：本节根据 [goehou/agent_java_offer 仓库贡献者的题目线索](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/05_%E9%A1%B9%E7%9B%AE%E8%A1%A8%E8%BE%BE/04_%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90%E5%B9%B3%E5%8F%B0/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。新增推理优化分题的双向入口，不更改原后训练解释。 仅本节对应引入内容，原笔记其他内容许可不变。
+
+---
 
 ## 09 直接追问：后训练和微调是什么关系
 
@@ -76,6 +90,8 @@ RLAIF 指利用 AI 反馈构造评价或偏好，不限定某个教师模型；�
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的直接追问](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/05_%E6%A8%A1%E5%9E%8B%E8%B0%83%E4%BC%98%E4%B8%8E%E5%BE%AE%E8%B0%83/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L19-L21)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。明确后训练阶段、微调方式与参数高效适配的关系，保留 SFT 属于后训练的勘误。许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
 
+---
+
 ## 10 直接追问：RLAIF 的反馈如何进入训练
 
 一种典型流程是：先让完成监督微调的策略对同一提示生成候选回答，再由评价模型按给定准则比较候选，把 AI 偏好数据用于训练奖励或偏好模型，最后用该模型提供的奖励进行强化学习。这样，AI 反馈通过训练信号影响策略，而不是把评价模型的评语直接当作最终答案。[Constitutional AI 原论文](https://arxiv.org/abs/2212.08073)
@@ -83,6 +99,8 @@ RLAIF 指利用 AI 反馈构造评价或偏好，不限定某个教师模型；�
 这只是其中一条路线。RLAIF 的关键是强化学习使用 AI 反馈，具体实现可以先训练独立奖励模型，也可以像 direct-RLAIF 一样在 RL 阶段直接从评价模型获取奖励。因此要说明实际采用的流程、评价准则和人工校准，不能仅凭“换成 AI 打分”断言成本更低或效果更好。[RLAIF vs. RLHF 原论文](https://arxiv.org/abs/2309.00267)
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的 RLAIF 流程材料](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/05_%E6%A8%A1%E5%9E%8B%E8%B0%83%E4%BC%98%E4%B8%8E%E5%BE%AE%E8%B0%83/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L36-L54)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充，并按上述原论文核验。恢复候选生成、AI 评价、奖励建模与策略优化的具体联系，将其限定为典型流程而非唯一实现；不沿用普遍优越性的结论。许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
+
+---
 
 ## 11 所属专题
 - [[八股/07-AI与Agent/04-模型原理与微调/00-模型原理与微调导航|模型原理与微调导航]]

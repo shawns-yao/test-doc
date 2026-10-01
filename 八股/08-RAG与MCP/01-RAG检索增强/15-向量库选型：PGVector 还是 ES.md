@@ -24,15 +24,21 @@ PG 的近似索引结合过滤可能返回不足，需要调搜索参数或设�
 
 口述：“我选能满足质量和SLO、同时运维与一致性成本更低的方案，数据原本在哪里只是一个因素。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/08-RAG与MCP/01-RAG检索增强/12-RAG 部署的实际挑战|RAG 部署的实际挑战？]]
 - [[八股/08-RAG与MCP/01-RAG检索增强/20-RAG 向量库|RAG 向量库]]
 
+---
+
 ## 04 参考资料
 
 - [pgvector 官方文档](https://github.com/pgvector/pgvector)
 - [Elasticsearch 官方 kNN 文档](https://www.elastic.co/docs/solutions/search/vector/knn)
+
+---
 
 ## 05 直接追问：FAISS、pgvector 与 Milvus 如何比较
 
@@ -47,6 +53,8 @@ PG 的近似索引结合过滤可能返回不足，需要调搜索参数或设�
 官方依据：[FAISS](https://github.com/facebookresearch/faiss/wiki/Getting-started)、[pgvector](https://github.com/pgvector/pgvector)、[Milvus 2.6 架构](https://milvus.io/docs/v2.6.x/architecture_overview.md)。
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的题目与资料](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/03_RAG/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L291-L307)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。补充原目标缺少的 FAISS/Milvus 运行职责及上线指标；保留原有 PG 与 ES 对比，不采用原资料绝对优劣和必然迁移建议。 许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
+
+---
 
 ## 06 所属专题
 - [[八股/08-RAG与MCP/01-RAG检索增强/00-RAG检索增强导航|RAG检索增强导航]]

@@ -24,14 +24,20 @@ RAG 不限于单跳，本题比较的是固定问答流水线与任务型研究�
 
 口述：“研究型 Agent 管信息缺口与证据闭环，产出的是可核查结论。相关动态检索见[[八股/08-RAG与MCP/01-RAG检索增强/17-Agentic RAG|Agentic RAG]]。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/21-设计 AI 写科研综述研究报告的系统|设计 AI 写科研综述/研究报告的系统？]]
+
+---
 
 ## 04 参考资料
 
 - [RAG 原论文](https://arxiv.org/abs/2005.11401)
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
 
 ## 05 所属专题
 

@@ -22,18 +22,26 @@ Subagent 不天然意味着短命，也不必完成后立即销毁；它强调�
 
 口述：“两者是协作拓扑和运行方式的差别，先讲具体实现，再比较交接成本、隔离和协调收益。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/05-Sub-agent 的收益到底是什么|Sub-agent 的收益到底是什么？]]
+
+---
 
 ## 04 参考资料
 
 - [Claude Code 子代理](https://code.claude.com/docs/en/sub-agents)
 - [Claude Code Agent teams](https://code.claude.com/docs/en/agent-teams)
 
+---
+
 ## 05 所属专题
 
 - [[八股/07-AI与Agent/07-框架协议与工程化/00-框架协议与工程化导航|框架协议与工程化导航]]
+
+---
 
 ## 06 补充团队协作的可选治理
 

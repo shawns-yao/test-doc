@@ -32,17 +32,18 @@ G1、ZGC 和类数据共享等持续改进；启动、内存和吞吐收益取�
 
 先保留原构建产物尝试在新运行时执行测试，再升级依赖和构建链；确定编译目标后使用 --release 控制语言/API/字节码目标。灰度比较启动、GC、请求尾延迟、内存和功能结果，保留可回滚镜像。
 
-## 03 校正与参考
-
-删除没有项目测量依据的“代码量减 30–50%”“启动砍半”“内存降 30–50%”。JDK 21 的虚拟线程已正式发布，但 ScopedValue、结构化并发等在该版本的预览状态要分别说明，不能一并当稳定 API。
-
+参考：
 - [Oracle JDK 21 迁移准备](https://docs.oracle.com/en/java/javase/21/migrate/preparing-migration.html)
 - [JDK 21 发布说明](https://www.oracle.com/java/technologies/javase/21-relnote-issues.html)
 
-## 04 相关问题与延伸
+---
+
+## 03 相关问题与延伸
 
 - [[八股/01-Java/03-Java并发/10-Java 21 虚拟线程是什么？适合什么场景|Java 21 虚拟线程是什么？适合什么场景]]：JDK升级中的虚拟线程能力与限制
 
-## 05 所属专题
+---
+
+## 04 所属专题
 
 - [[八股/01-Java/06-Java新特性/00-Java新特性导航|Java新特性导航]]

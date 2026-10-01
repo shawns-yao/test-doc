@@ -24,6 +24,8 @@ aliases:
 
 Istio 的 circuit breaking 常包含连接池资源限制和 outlier detection，不能直接等同于所有应用库的“错误率触发 Closed/Open/Half-Open”算法。重试次数、总超时和并发上限分别保护不同维度，需要和 SDK 策略核对避免重复治理。
 
+---
+
 ## 03 安全 遥测 与版本限制
 
 mTLS 证明通信工作负载身份并加密通道，不自动证明最终用户能读取某张订单；AuthorizationPolicy 与应用对象级权限各有职责。开启 mTLS 也需确认策略模式、覆盖范围和实际连接，不能只看安装了 Istio。
@@ -32,6 +34,8 @@ mTLS 证明通信工作负载身份并加密通道，不自动证明最终用户
 
 口述：“Istio 统一路由、安全和遥测，但我会把声明配置、实际下发和请求行为三层验证。网络身份不替代业务授权，代理重试不替代业务幂等，模式和版本影响具体 API。”
 
+---
+
 ## 04 依据与关联问题
 
 - [Istio 安全模型](https://istio.io/latest/docs/concepts/security/)
@@ -39,6 +43,8 @@ mTLS 证明通信工作负载身份并加密通道，不自动证明最终用户
 - [Istio Ambient 数据面](https://istio.io/latest/docs/ambient/architecture/data-plane/)
 - [[八股/09-系统设计/05-ServiceMesh/05-引入 Mesh 后排障方式有什么变化|Mesh 排障]]
 - [[八股/09-系统设计/04-网关与流量治理/04-网关鉴权与签名校验怎么设计|用户认证与请求签名]]
+
+---
 
 ## 05 所属专题
 

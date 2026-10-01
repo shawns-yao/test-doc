@@ -22,15 +22,21 @@ MCP 管客户端与工具/资源服务的标准交互；Skill 封装使用方法
 
 追问“Skill 和 RAG 是否都只是塞文档？”Skill 主要影响任务方法，RAG 主要提供问题相关事实，但可组合；不是每份加载文档都应视作可信指令。详见[[八股/08-RAG与MCP/03-MCP协议与工具/03-为什么使用MCP而不是使用本地Tools或者Skills|三者的接入取舍]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/08-数据Agent设计/06-MCP 和 Skills 有什么区别|MCP 和 Skills 的区别]]
+
+---
 
 ## 04 参考资料
 
 - [Agent Skills 规范](https://agentskills.io/specification)
 - [MCP 2025-11-25 Tools 规范](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
 - [RAG 原论文](https://arxiv.org/abs/2005.11401)
+
+---
 
 ## 05 所属专题
 

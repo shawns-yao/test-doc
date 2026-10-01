@@ -26,13 +26,12 @@ aliases:
 
 STW 也不只来自 GC；安全点操作、去优化或诊断活动都可能影响停顿。对当前主流收集器，应回答仍存在短同步阶段，但“所有未来实现都绝不可能零 STW”不是规范承诺。
 
-## 03 校正依据
-
-本次纠正把 Concurrent Root Region Scan 归成 STW 的误导，保留根处理需要一致性视图的直觉。
-
+参考：
 - [G1 官方周期：Concurrent Start、Root Region Scan、Remark、Cleanup](https://docs.oracle.com/en/java/javase/21/gctuning/garbage-first-g1-garbage-collector1.html)
 - [[八股/01-Java/04-Java虚拟机/10-ZGC 是什么？为什么停顿低|ZGC 如何并发搬迁对象]]
 
-## 04 所属专题
+---
+
+## 03 所属专题
 
 - [[八股/01-Java/04-Java虚拟机/00-Java虚拟机导航|Java虚拟机导航]]

@@ -14,6 +14,8 @@ aliases:
 
 **TensorFlow vs Transformer：**「框架」与「模型架构」的关系——TensorFlow 是深度学习框架（训练/推理工具链），Transformer 是神经网络架构（模型怎么设计，如自注意力）。前者解决「怎么高效训练和上线」，后者定义模型内部计算方式。
 
+---
+
 ## 02 四个不同层次
 
 NLP 是问题领域，Transformer 是模型架构，TensorFlow 是实现与训练框架，TFRecord 是按记录组织的二进制容器格式。TFRecord 不限定文本，也不自带业务字段语义；常用 tf.train.Example 编码特征只是常见约定。
@@ -22,13 +24,19 @@ NLP 是问题领域，Transformer 是模型架构，TensorFlow 是实现与训�
 
 追问“Transformer 必须用 TensorFlow 吗？”不必，PyTorch 等框架也可实现；“TFRecord 就是张量吗？”不是，需解析记录后得到训练所需张量。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/04-模型原理与微调/01-LLM 基本原理与后训练体系|LLM 基本原理与后训练体系？]]
 
+---
+
 ## 04 参考资料
 
 - [TensorFlow 官方 TFRecord 教程](https://www.tensorflow.org/tutorials/load_data/tfrecord)
+
+---
 
 ## 05 所属专题
 

@@ -42,6 +42,8 @@ aliases:
 
 依据：[RocketMQ 事务消息机制与限制](https://rocketmq.apache.org/docs/featureBehavior/04transactionmessage/)。
 
+---
+
 ## 03 顺序与消费确认的实际边界
 
 RocketMQ 5.x FIFO 以 message group 表达局部顺序，例如每个 orderId 一个组；旧版客户端常通过选择同一 MessageQueue 实现。消息的 keys 属性主要用于检索，并不等价于配置了 FIFO 消息组。生产端多线程同时发送、跨生产者提交，不能仅凭“同 key”推导业务时间顺序。
@@ -52,6 +54,8 @@ RocketMQ 5.x FIFO 以 message group 表达局部顺序，例如每个 orderId �
 
 依据：[FIFO 消息](https://rocketmq.apache.org/docs/featureBehavior/03fifomessage/)、[消费组](https://rocketmq.apache.org/docs/domainModel/08consumergroup/)、[消费重试](https://rocketmq.apache.org/docs/featureBehavior/10consumerretrypolicy/)。
 
+---
+
 ## 04 项目口述与追问
 
 可按“具体事件 → 为什么异步 → 一致性方案 → 失败处理 → 指标”介绍项目，避免把支持的特性说成实际全都用过。示例口述：“订单事务完成后通过可靠事件触发搜索同步和通知，各服务独立消费组；重复投递由业务流水唯一键处理，失败有限重试并告警。对订单状态更新按订单维度保序，监控最老未消费消息年龄，而不只看总积压。”
@@ -60,11 +64,15 @@ RocketMQ 5.x FIFO 以 message group 表达局部顺序，例如每个 orderId �
 - 超时关单为什么还要查订单？延迟消息只是触发检查，消费时订单可能已付款，要做带状态条件的更新
 - 发货事件最终没消费怎么办？把投递、消费失败和业务状态对账串起来，不能把 Broker 接收成功当作业务闭环
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/05-消息队列与搜索/01-RocketMQ/02-为什么选择 RocketMQ，而不是其他消息队列？如何做技术选型|为什么选择 RocketMQ，而不是其他消息队列？如何做技术选型]]：业务职责与消息系统选型
 
 - [[八股/09-系统设计/02-一致性与高可用/04-2PC、3PC、TCC、Saga 怎么选|事务消息与跨服务事务方案的边界]]
+
+---
 
 ## 06 所属专题
 

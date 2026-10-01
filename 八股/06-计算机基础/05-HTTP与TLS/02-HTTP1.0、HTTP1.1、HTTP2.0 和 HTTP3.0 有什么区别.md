@@ -39,15 +39,21 @@ aliases:
 
 旧文「HTTP/3 彻底消除队头阻塞、内核态拥塞控制」需要订正：它减少跨 QUIC 流的有序交付阻塞，同一流仍需按序，流间还共享拥塞预算；QUIC 常在用户态实现。HTTP/1.0 也存在 keep-alive 扩展，HTTP/1.1 默认持久连接。HTTP/2 server push 是协议能力，不代表当前浏览器均支持或建议依赖。
 
+---
+
 ## 03 依据与延伸阅读
 
 - [RFC 9113 HTTP/2](https://www.rfc-editor.org/rfc/rfc9113.html)
 - [RFC 9114](https://www.rfc-editor.org/rfc/rfc9114.html)
 
+---
+
 ## 04 相关问题
 
 - [[八股/06-计算机基础/03-HTTP报文与保护范围/01-HTTP 请求报文由哪些部分组成？请说明请求行、请求头、空行和请求体的作用|HTTP 请求报文由哪些部分组成？请说明请求行、请求头、空行和请求体的作用]]：HTTP版本改变帧编码
 - [[八股/06-计算机基础/05-HTTP与TLS/04-HTTP3 为什么使用基于 UDP 的 QUIC？QUIC 解决了什么问题|HTTP3 为什么使用基于 UDP 的 QUIC？QUIC 解决了什么问题]]：HTTP版本演进与QUIC
+
+---
 
 ## 05 所属专题
 

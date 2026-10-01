@@ -29,13 +29,19 @@ aliases:
 
 参数绑定保护的是数据位置，不能拿一个占位符替代 SQL 关键字或任意表名；动态结构需要由服务端允许列表映射产生。ORM 仍可提供拼接 SQL 的逃生接口，所以「使用 ORM」不等于已防注入。安全验证应在授权测试环境检查入口和二次拼接路径，不对生产服务随意执行攻击扫描。
 
+---
+
 ## 03 依据与延伸阅读
 
 - [OWASP SQL 注入防护](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 
+---
+
 ## 04 相关问题
 
 - [[八股/10-工程实践/02-Web安全/02-什么是 XSS 和 CSRF？分别如何防护|什么是 XSS 和 CSRF？分别如何防护]]：数据库与浏览器的解释边界
+
+---
 
 ## 05 所属专题
 

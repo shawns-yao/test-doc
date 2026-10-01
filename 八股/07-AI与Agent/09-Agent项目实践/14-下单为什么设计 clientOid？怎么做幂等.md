@@ -18,6 +18,8 @@ clientOid：客户端自定义订单 ID——用于关联订单及按平台契�
 
 clientOid、clientOrderId 等名字依平台不同，通常用于客户端关联订单。它能否去重、去重范围和保留多久，要看服务端契约。例如有的平台只要求未完成订单之间唯一，原订单完成后可能允许复用；不能说它是“唯一幂等保证字段”。
 
+---
+
 ## 03 应用侧的幂等流程
 
 1. 为一个确定业务意图生成稳定请求 ID，并在发送前持久化账户、交易对象、方向、数量等参数摘要。
@@ -28,6 +30,8 @@ clientOid、clientOrderId 等名字依平台不同，通常用于客户端关联
 
 幂等记录期限至少覆盖可能的重试与补偿窗口；不能让 Redis 短 TTL 到期后同一意图再次执行。分布式锁可减少并发，但不替代持久去重与业务核验。
 
+---
+
 ## 04 追问与口述
 
 “重试要生成新 ID 吗？”同一业务意图不应；真正的新订单才用新 ID。“客户端有键就 exactly-once 吗？”不，第三方受理与本地落盘之间仍可能有未知窗口，需要回查和对账。
@@ -35,6 +39,8 @@ clientOid、clientOrderId 等名字依平台不同，通常用于客户端关联
 口述：“客户订单标识帮助关联与部分去重，端到端幂等还要参数一致、持久记录、超时回查与状态收敛。”
 
 相关：[[八股/07-AI与Agent/02-Agent原理与编排/21-Agent的checkpoint是什么|checkpoint 与副作用]]。
+
+---
 
 ## 05 关联追问
 
@@ -44,10 +50,14 @@ clientOid、clientOrderId 等名字依平台不同，通常用于客户端关联
 - [[八股/07-AI与Agent/09-Agent项目实践/41-Gasless 交易为什么不等于没有费用|Gasless 交易为什么不等于没有费用]]
 - [[八股/07-AI与Agent/09-Agent项目实践/42-跨链订单状态机怎样处理幂等终局性与补偿|跨链订单状态机怎样处理幂等终局性与补偿]]
 
+---
+
 ## 06 参考资料
 
 - [Binance 官方现货交易接口契约](https://developers.binance.com/docs/binance-spot-api-docs/rest-api/trading-endpoints)
 - [Redis 锁边界](https://redis.io/docs/latest/develop/clients/patterns/distributed-locks/)
+
+---
 
 ## 07 所属专题
 

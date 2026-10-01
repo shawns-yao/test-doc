@@ -22,16 +22,22 @@ WebArena 关注网页任务的功能性终态；AgentBench 汇集多类交互环
 
 追问“公开分数高为什么项目仍失败？”业务权限、私有知识、真实依赖抖动与任务分布可能没有被该基准覆盖。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/05-评测与可观测性/03-常用 LLM 综合基准测试|常用 LLM 综合基准测试？]]
 - [[八股/07-AI与Agent/05-评测与可观测性/06-Agent 评估与 LLM 评估的差异|Agent 评估与 LLM 评估的差异？]]
+
+---
 
 ## 04 参考资料
 
 - [WebArena](https://arxiv.org/abs/2307.13854)
 - [AgentBench](https://arxiv.org/abs/2308.03688)
 - [GAIA](https://arxiv.org/abs/2311.12983)
+
+---
 
 ## 05 所属专题
 

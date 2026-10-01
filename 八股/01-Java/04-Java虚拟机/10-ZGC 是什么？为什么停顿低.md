@@ -24,6 +24,8 @@ aliases:
 
 JDK 21 支持通过 UseZGC 与 ZGenerational 选择分代 ZGC；不能只说“所有 ZGC 都不分代”。分代实现还使用写入相关屏障和代际信息，不能把早期着色指针/读屏障图当作所有版本完整实现。启用参数应以目标 JDK 发行版文档为准。
 
+---
+
 ## 03 调优与参考
 
 最关键的是给并发回收赶上分配速度的空间与 CPU。若空闲空间耗尽，业务仍可能遭遇 allocation stall；GC pause 很小不代表完全没有等待。
@@ -32,6 +34,8 @@ JDK 21 支持通过 UseZGC 与 ZGenerational 选择分代 ZGC；不能只说“�
 - [JDK 21 发布说明](https://www.oracle.com/java/technologies/javase/21-relnote-issues.html)
 
 - [[八股/01-Java/04-Java虚拟机/13-STW 能完全避免吗？G1 为什么必须 STW|G1 与 ZGC 的暂停阶段比较]]
+
+---
 
 ## 04 所属专题
 

@@ -18,6 +18,8 @@ Orchestrator 模式:一个中央 Agent 负责任务分解、路由分配、结�
 
 记忆要点:先答通信三选一,再答"主管-工人"集中编排便于统一控制,对比级联/对等模式容易失控。
 
+---
+
 ## 02 通信协议要表达责任与状态
 
 消息至少关联 task_id、parent_task_id、发送者、目标、输入版本、产物引用和成功/阻塞/失败状态。共享黑板要定义字段所有者与冲突合并；队列需要处理重复、乱序和消费确认，直接函数调用则要处理超时与取消。
@@ -26,15 +28,21 @@ Orchestrator 易集中控制，但也可能成为瓶颈或单点。协调者可�
 
 口述：“先定义任务与消息契约，再选集中或对等拓扑；通信通了不等于责任与状态一致。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/09-A2A 框架与普通 Agent 框架的区别|A2A 框架与普通 Agent 框架的区别？]]
 - [[八股/07-AI与Agent/02-Agent原理与编排/10-Multi-Agent 实际项目怎么设计？LangGraph 里怎么编排更稳|Multi-Agent 实际项目怎么设计？LangGraph 里怎么编排更稳？]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
 - [A2A 规范](https://a2a-protocol.org/latest/specification/)
+
+---
 
 ## 05 所属专题
 

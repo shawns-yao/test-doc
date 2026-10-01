@@ -30,14 +30,20 @@ Checkpoint 只保存运行状态，不保证外部副作用只发生一次。节
 
 追问“Critic 能确保正确吗？”它只是一个评价组件，关键产物仍需测试、规则或事实证据验证。参见[[八股/07-AI与Agent/02-Agent原理与编排/21-Agent的checkpoint是什么|checkpoint 的能力边界]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/07-框架协议与工程化/04-LangGraph 生产治理怎么做|LangGraph 生产治理怎么做？]]
 - [[八股/07-AI与Agent/12-多Agent复习/02-Agent 之间怎么通信、怎么分工听说过 Orchestrator 模式吗|Agent 之间怎么通信、怎么分工?听说过 Orchestrator 模式吗?]]
 
+---
+
 ## 04 参考资料
 
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
+
+---
 
 ## 05 所属专题
 

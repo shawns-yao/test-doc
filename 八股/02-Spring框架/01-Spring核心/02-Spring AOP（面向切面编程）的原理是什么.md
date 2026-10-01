@@ -27,6 +27,8 @@ aliases:
 
 JDK 代理暴露接口方法；CGLIB 通过子类覆盖方法，因此 final 类不能这样代理，final/private 方法不能被覆盖增强。Spring AOP 只支持方法执行连接点，不自动支持构造器调用或字段访问；AspectJ 编译期/加载期织入是另一种机制，其自调用边界不同。
 
+---
+
 ## 03 调用链的取舍
 
 多个 around advice 是嵌套调用，外层进入早、退出晚，顺序会影响事务、重试和缓存。例如在同一事务内重试与每次重试新建事务的结果不同。应给必要的切面明确顺序并测试异常传播；不要吞异常后假装事务层能自动识别失败。
@@ -37,9 +39,13 @@ JDK 代理暴露接口方法；CGLIB 通过子类覆盖方法，因此 final 类
 - [Spring Boot 默认类代理与配置开关](https://docs.spring.io/spring-boot/reference/features/aop.html)
 - [[八股/02-Spring框架/01-Spring核心/07-Spring AOP 有哪些常见场景？核心概念如何理解|如何选择切点、通知和实际横切场景]]
 
+---
+
 ## 04 相关问题与延伸
 
 - [[八股/02-Spring框架/03-SpringBoot/01-Spring Boot 自动装配如何工作|Spring Boot 自动装配如何工作]]：反向关联：此题引用了本题的机制或边界
+
+---
 
 ## 05 所属专题
 

@@ -24,6 +24,8 @@ aliases:
 
 订单采用持久状态机，例如 proposed、approved、submitted、unknown、acknowledged、partially_filled、filled、cancelled、rejected。具体终态与转换以交易所契约为准；请求返回成功只代表某个阶段，不能等同成交。每次转换由回执或对账证据驱动。
 
+---
+
 ## 03 故障与验收
 
 网络超时先记 unknown 并按客户订单标识查状态，避免重复下单；消息重复或乱序需去重和版本处理。行情过期、仓位不同步或风控服务不可用时，停止新增风险动作，保留查询与人工处置通道。
@@ -32,14 +34,20 @@ aliases:
 
 相关：[[八股/07-AI与Agent/09-Agent项目实践/14-下单为什么设计 clientOid？怎么做幂等|订单幂等]]；[[八股/07-AI与Agent/09-Agent项目实践/16-设计可真实交易的 Agent，权限和风控边界怎么设|权限边界]]。
 
+---
+
 ## 04 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/15-交易场景怎么做风控|交易场景怎么做风控？]]
+
+---
 
 ## 05 参考资料
 
 - [Binance 官方现货交易接口契约](https://developers.binance.com/docs/binance-spot-api-docs/rest-api/trading-endpoints)
 - [MCP 官方安全实践](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices)
+
+---
 
 ## 06 所属专题
 

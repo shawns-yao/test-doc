@@ -24,13 +24,19 @@ aliases:
 
 口述：“当前难点主要是复杂环境中的可靠执行和可控成本。限定任务、验证动作、提供接管能降低风险，但不能声称完全消除幻觉或越权。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/07-构建复杂 Agent 最主要的挑战是什么|构建复杂 Agent 最主要的挑战是什么？]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
 
 ## 05 所属专题
 

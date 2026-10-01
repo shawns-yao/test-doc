@@ -24,14 +24,20 @@ MCP 标准化客户端与服务端之间的能力协商及工具、资源、提�
 
 口述：“它统一应用接入外部能力的接口，能力怎么使用、允许谁用、用了是否成功仍由宿主与服务端负责。”相关：[[八股/08-RAG与MCP/03-MCP协议与工具/03-为什么使用MCP而不是使用本地Tools或者Skills|MCP 与本地工具和 Skill]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/11-Agent工程复习/02-MCP 协议是干嘛的,最近为什么突然这么火,解决了什么之前的痛点|MCP 协议是干嘛的,最近为什么突然这么火,解决了什么之前的痛点?]]
+
+---
 
 ## 04 参考资料
 
 - [MCP 2025-11-25 Tools 规范](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
 - [MCP 2025-11-25 Transports 规范](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports)
+
+---
 
 ## 05 所属专题
 

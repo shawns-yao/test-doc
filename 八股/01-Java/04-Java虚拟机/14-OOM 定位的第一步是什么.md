@@ -37,11 +37,15 @@ aliases:
 
 NMT 主要跟踪 JVM 内部的 native 分配，不覆盖所有第三方 native 库；必须与系统内存地图、BufferPool 指标和具体框架指标联合判断。heap dump 无法看到全部堆外数据，但包装器数量及引用链能帮助定位谁长期持有缓冲区。
 
+---
+
 ## 03 下一步与参考
 
 先确定哪类预算耗尽，再判断持续保留、瞬时峰值、资源配额或实际容量不足；完整工具链见 [[八股/01-Java/04-Java虚拟机/06-线上遇到过 OOM 吗？怎么排查？topjpsjstackjmap 各能看什么|OOM 分类型取证流程]]。
 
 - [Oracle NMT 的覆盖边界](https://docs.oracle.com/en/java/javase/21/vm/native-memory-tracking.html)
+
+---
 
 ## 04 所属专题
 

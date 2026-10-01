@@ -25,6 +25,8 @@ Elasticsearch 的 Analyzer 通常由字符过滤器、Tokenizer 和 Token Filter
 
 依据：[官方内置分析器与自定义组成](https://www.elastic.co/docs/reference/text-analysis/analyzer-reference)、[Keyword 字段](https://www.elastic.co/docs/reference/elasticsearch/mapping-reference/keyword)。
 
+---
+
 ## 03 选择 IK 的证据与版本边界
 
 IK 由 INFINI Labs 维护，提供 ik_smart 与 ik_max_word 及词典扩展；安装必须匹配 Elasticsearch 版本，托管环境是否允许该插件也要事先验证。官方另有 Smart Chinese 插件可作为对照。选择哪一个应由真实中文词、专有名词、数字字母混排、短语和错误输入的评测决定。
@@ -34,6 +36,8 @@ IK 由 INFINI Labs 维护，提供 ik_smart 与 ik_max_word 及词典扩展；�
 修改词典只影响之后进行的分析，不会自动把已存倒排索引重新切词。若改变索引侧分词语义，应评估重建索引；查询侧词典变化则可能立即改变检索结果，适合灰度、回归与回滚。
 
 依据：[IK 官方项目说明与兼容版本](https://github.com/infinilabs/analysis-ik)、[Elastic Smart Chinese 插件](https://www.elastic.co/docs/reference/elasticsearch/plugins/analysis-smartcn)。
+
+---
 
 ## 04 追问与口述
 
@@ -45,9 +49,13 @@ IK 由 INFINI Labs 维护，提供 ik_smart 与 ik_max_word 及词典扩展；�
 
 补充依据：[Edge n-gram tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-edgengram-tokenizer.html)。
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/05-消息队列与搜索/04-Elasticsearch/04-Elasticsearch 数据写入与查询原理|Elasticsearch 数据写入与查询原理]]：文本分析影响索引与查询
+
+---
 
 ## 06 所属专题
 

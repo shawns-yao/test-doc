@@ -22,14 +22,20 @@ aliases:
 
 口述：“模型 API 提供推理/生成能力，MCP 统一外部能力接入，执行器连接两者并负责鉴权与结果校验。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/11-Agent工程复习/03-Function Calling 底层模型是怎么决定该调哪个工具、传什么参数的|Function Calling 底层模型是怎么"决定"该调哪个工具、传什么参数的?]]
+
+---
 
 ## 04 参考资料
 
 - [MCP 2025-11-25 Tools 规范](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
 - [LangChain 官方概览](https://docs.langchain.com/oss/python/langchain/overview)
+
+---
 
 ## 05 所属专题
 

@@ -16,6 +16,8 @@ aliases:
 
 可以补一句:ReAct 更适合需要多步推理、容易出错要回头修正的复杂任务,Function Calling 可承载单步或多轮工具决策,两者其实经常是搭配着用的,不是二选一。
 
+---
+
 ## 02 可直接口述的完整版本
 
 “ReAct 是交替组织推理候选、行动与观察的策略，Function Calling 是模型表达工具调用的接口能力。运行时可以把 Function Calling 放进 ReAct 风格循环中：先选工具，执行器校验并执行，再将结果送回模型。两者没有互斥关系。”
@@ -24,10 +26,14 @@ aliases:
 
 例子可改编：查一个确定字段通常一次工具足够；比较多个相互矛盾来源可能需要观察反馈后补查。相关：[[八股/07-AI与Agent/10-Agent基础复习/03-ReAct 是什么,跟单纯的 Function Calling 有啥区别|基础对比]]；[[八股/07-AI与Agent/02-Agent原理与编排/02-ReAct 是什么？Agent 的规划能力怎么设计|规划策略]]。
 
+---
+
 ## 03 参考资料
 
 - [ReAct 原论文](https://arxiv.org/abs/2210.03629)
 - [MCP 2025-11-25 Tools 规范](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
+
+---
 
 ## 04 所属专题
 

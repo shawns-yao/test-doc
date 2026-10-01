@@ -20,6 +20,8 @@ aliases:
 
 记忆要点:上限防死循环、仲裁防甩锅、状态机防互踢、日志防黑盒。
 
+---
+
 ## 02 上限止损之外，还要判断有没有进展
 
 保存每个任务的验收条件、当前 owner 和已尝试动作；相同输入、相同失败原因反复派发且无新证据时触发无进展处理。消息相似度只是线索，不应把必要的重复核验误杀。
@@ -28,15 +30,21 @@ aliases:
 
 口述：“预算硬上限防失控，任务所有权与验收防推诿，无法收敛时安全停机并交代恢复条件。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/19-当 Agent 遇到无法解决的场景，应该怎么处理|当 Agent 遇到无法解决的场景，应该怎么处理？]]
 - [[八股/07-AI与Agent/15-Agent专题复盘/03-题目 3任务链很长(几十步)的 Agent,怎么防止它跑偏或者死循环|题目 3:任务链很长(几十步)的 Agent,怎么防止它跑偏或者死循环?]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
+
+---
 
 ## 05 所属专题
 

@@ -31,14 +31,20 @@ aliases:
 
 本题比较两种攻击的信任来源，可保留同篇，但防线不能互相替代。HttpOnly 阻止脚本读 Cookie，不阻止 XSS 以用户身份发请求；SameSite 也不处理同站不同源的所有风险。Authorization Header 的 token 降低传统自动带 Cookie 的 CSRF 风险，却仍需防 XSS、错误的跨域允许配置和 token 泄露。
 
+---
+
 ## 03 依据与延伸阅读
 
 - [OWASP XSS 防护](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
 - [OWASP CSRF 防护](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
 
+---
+
 ## 04 相关问题
 
 - [[八股/10-工程实践/02-Web安全/01-什么是 SQL 注入？如何防止|什么是 SQL 注入？如何防止]]：数据库与浏览器的解释边界
+
+---
 
 ## 05 所属专题
 

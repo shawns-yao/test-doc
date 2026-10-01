@@ -24,14 +24,20 @@ RAG 和 Agent 的 Prompt 可以重合：Agent 也需要基于证据回答，RAG 
 
 直接追问：“把规则写进 Prompt 就算可执行协议吗？”只是模型可读的约定，真正执行仍需程序验证和测试。
 
+---
+
 ## 03 关联追问
 
 - [[八股/08-RAG与MCP/01-RAG检索增强/17-Agentic RAG|Agentic RAG]]
+
+---
 
 ## 04 参考资料
 
 - [MCP 官方安全实践](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices)
 - [ReAct 原论文](https://arxiv.org/abs/2210.03629)
+
+---
 
 ## 05 所属专题
 

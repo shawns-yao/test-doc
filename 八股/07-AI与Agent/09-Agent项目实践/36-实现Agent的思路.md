@@ -9,6 +9,8 @@ aliases:
 
 使用了什么设计思路，为什么用 a 而不是用 b
 
+---
+
 ## 02 面试怎样讲实现选择
 
 先定义一个能验收的任务，再围绕“为什么选 A 而不是 B”说明取舍。下面是可改编的设计框架，不是个人项目经历。
@@ -20,9 +22,13 @@ aliases:
 5. 验证：工具成功不等于任务成功，使用规则、测试和证据独立验收；关键动作增加授权门。
 6. 迭代：用黄金集和线上坏例定位 Prompt、数据、工具或编排瓶颈，再决定是否换框架、模型或训练。
 
+---
+
 ## 03 选择理由要可证实
 
 例子：“选择持久图状态，是因为任务需跨进程恢复与等待审批”，比“LangGraph 最先进”更有说服力；“简单本地函数无需 MCP，跨客户端复用才封协议”说明复杂度克制。若未实测，不要给虚构成功率或成本下降比例。
+
+---
 
 ## 04 失败边界与口述
 
@@ -32,11 +38,15 @@ aliases:
 
 相关：[[八股/07-AI与Agent/02-Agent原理与编排/03-AI Agent 的基本实现路径是什么|最小实现路径]]；[[八股/07-AI与Agent/09-Agent项目实践/37-价格，预算|预算规划]]。
 
+---
+
 ## 05 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
 - [MCP 2025-11-25 Tools 规范](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
+
+---
 
 ## 06 所属专题
 

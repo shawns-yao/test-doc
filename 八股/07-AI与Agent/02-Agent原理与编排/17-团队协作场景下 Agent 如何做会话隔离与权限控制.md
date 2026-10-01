@@ -14,6 +14,8 @@ aliases:
 
 **为什么审计要求更高：**协作平台涉及多人协同和组织责任，任何自动动作都可能影响业务结果与合规边界——必须回答清楚「谁发起、谁审批、执行了什么、影响了什么」，审计链完整才能可追责、可证明。
 
+---
+
 ## 02 隔离键与授权来源
 
 会话主键的组成取决于共享规则，不一定同时含 workspace/channel/thread/user。例如线程由多人协作时，按 user 再切开可能失去共享上下文；关键是由可信身份服务决定租户与成员资格，并在每次读写和工具执行时检查资源权限。
@@ -22,14 +24,20 @@ aliases:
 
 追问“日志能否全量存？”要脱敏、分级访问和设置保留期；审计保存行动证据，不需要索取或存储隐藏思维链。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/01-在 Agent 项目中，如何做风险闭环？如何判断用户意图|在 Agent 项目中，如何做风险闭环？如何判断用户意图？]]
+
+---
 
 ## 04 参考资料
 
 - [MCP 2025-11-25 Authorization 规范](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
 - [MCP 官方安全实践](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices)
+
+---
 
 ## 05 所属专题
 

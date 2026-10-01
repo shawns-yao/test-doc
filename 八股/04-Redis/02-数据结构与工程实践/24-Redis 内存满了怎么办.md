@@ -17,28 +17,40 @@ aliases:
 
 长期治理要建立 key TTL、容量预算、增长趋势、淘汰命中、写入拒绝和恢复演练的监控闭环。
 
+---
+
 ## 02 理解机制与追问
 
 maxmemory 是淘汰控制阈值，不等于进程 RSS 的绝对上限。分配器碎片、复制/AOF 缓冲、fork 子进程和 COW 都需预留空间。先观察增长来自键数量、值大小、缓冲还是碎片；减少业务数据后 RSS 也未必立即等比例下降。
+
+---
 
 ## 03 易错点与适用边界
 
 noeviction 通常让需要新增内存的写命令报错，读和删除仍可继续，并非所有命令全部不可用。volatile-* 只考虑有过期时间的键，可能没有足够候选而拒写；allkeys-* 会影响所有候选数据，不应对不可重建状态随意开启。过期删除与内存淘汰是两套机制。
 
+---
+
 ## 04 面试口述
 
 先区分数据量达到限制和进程总体内存压力，再按数据是否可丢决定淘汰、限写或扩容。设置 maxmemory 时必须为运行开销与持久化峰值留余量。
+
+---
 
 ## 05 关联问题
 
 - [[八股/04-Redis/02-数据结构与工程实践/30-大 key 的风险与治理|大 key 治理]]
 - [[八股/04-Redis/02-数据结构与工程实践/23-Redis 的持久化机制有哪些|持久化开销]]
 
+---
+
 ## 06 官方参考
 
 - [Redis 淘汰策略](https://redis.io/docs/latest/develop/reference/eviction/)
 - [Redis RDB 与 AOF 持久化](https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/)
 - [Redis 紧凑编码与版本](https://redis.io/docs/latest/operate/oss_and_stack/management/optimization/memory-optimization/)
+
+---
 
 ## 07 所属专题
 

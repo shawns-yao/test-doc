@@ -28,14 +28,20 @@ Haystack 主要是组件化开源 AI 编排框架，不宜与 RAGFlow 一并归�
 
 可改编口述：“先用相同任务做最小基线和故障注入，记录交付成本与生产边界。框架不能替应用保证幂等、权限和数据质量。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/11-Agent工程复习/01-LangChain LangGraph AutoGen CrewAI 用过哪个为什么选它,踩过什么坑|LangChain / LangGraph / AutoGen / CrewAI 用过哪个?为什么选它,踩过什么坑?]]
+
+---
 
 ## 04 参考资料
 
 - [LangChain 官方概览](https://docs.langchain.com/oss/python/langchain/overview)
 - [Haystack 官方概览](https://docs.haystack.deepset.ai/docs/intro)
+
+---
 
 ## 05 直接追问：如何迁移框架并避免技术锁定
 
@@ -47,8 +53,12 @@ Haystack 主要是组件化开源 AI 编排框架，不宜与 RAGFlow 一并归�
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的题目与资料](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/08_%E6%A1%86%E6%9E%B6%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%8C%96/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L78-L91)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。补充源资料的框架迁移、回滚与技术锁定追问；与原文选型结论衔接，不重复比较框架品牌。 许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
 
+---
+
 ## 06 所属专题
 - [[八股/07-AI与Agent/07-框架协议与工程化/00-框架协议与工程化导航|框架协议与工程化导航]]
+
+---
 
 ## 07 补充分块操作与框架控制力
 

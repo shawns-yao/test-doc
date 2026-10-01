@@ -26,14 +26,20 @@ aliases:
 
 Channel 绑定 EventLoop 有助于连接内事件串行，但将 handler 放到其他 executor 后必须重新考虑并发、结果顺序和共享状态。写成功通常意味着交给网络栈或完成该异步写操作，不等于对端业务确认。背压要落实到减少生产、控制待发送队列和请求并发，而非仅监控高水位。
 
+---
+
 ## 03 依据与延伸阅读
 
 - [Netty ChannelPipeline](https://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html)
+
+---
 
 ## 04 相关问题
 
 - [[八股/06-计算机基础/04-TCP与UDP/08-TCP 粘包和半包是什么？如何解决|TCP 粘包和半包是什么？如何解决]]：字节流拆帧与Netty解码
 - [[八股/06-计算机基础/06-网络原理与IO/14-IO 多路复用原理怎么讲|IO 多路复用原理怎么讲]]：事件就绪到Reactor处理
+
+---
 
 ## 05 所属专题
 

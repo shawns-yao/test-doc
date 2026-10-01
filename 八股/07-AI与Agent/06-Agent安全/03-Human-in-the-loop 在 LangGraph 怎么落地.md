@@ -20,15 +20,21 @@ aliases:
 
 口述：“HITL 是可恢复的审批状态机，不只是弹确认框；重点是审批和真实执行内容一致。”详细见[[八股/07-AI与Agent/02-Agent原理与编排/21-Agent的checkpoint是什么|checkpoint]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/19-当 Agent 遇到无法解决的场景，应该怎么处理|当 Agent 遇到无法解决的场景，应该怎么处理？]]
 - [[八股/07-AI与Agent/09-Agent项目实践/16-设计可真实交易的 Agent，权限和风控边界怎么设|设计可真实交易的 Agent，权限和风控边界怎么设？]]
 
+---
+
 ## 04 参考资料
 
 - [LangGraph 官方中断与恢复文档](https://docs.langchain.com/oss/python/langgraph/interrupts)
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
+
+---
 
 ## 05 所属专题
 

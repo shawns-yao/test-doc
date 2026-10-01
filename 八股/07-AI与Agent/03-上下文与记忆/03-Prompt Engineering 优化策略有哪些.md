@@ -22,14 +22,20 @@ Prompt 可以提供任务目标、边界、反例和输出规范，但“最多�
 
 口述：“Prompt 优化先减少歧义，再用评测看效果；硬权限和资源边界交给程序，不能靠措辞保证。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/03-上下文与记忆/04-什么是上下文工程？和 Prompt Engineering 的边界|什么是上下文工程？和 Prompt Engineering 的边界？]]
+
+---
 
 ## 04 参考资料
 
 - [Anthropic 上下文工程说明](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 - [MCP 2025-11-25 Tools 规范](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
+
+---
 
 ## 05 所属专题
 

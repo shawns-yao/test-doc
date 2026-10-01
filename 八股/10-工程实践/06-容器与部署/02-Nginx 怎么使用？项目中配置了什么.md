@@ -63,18 +63,26 @@ proxy_read_timeout 60s;
 
 旧配置里 nodelay 的含义需订正：允许 burst 范围内请求不等待，超出允许突发才被拒绝，并非所有超额请求立即拒绝。示例的 upstream 名称也不一致，部署前要保证 proxy_pass 指向真实定义。proxy_read_timeout 限制连续两次读取间隔，不能当作整个请求总期限；反向代理的重试也要考虑写请求重复执行。
 
+---
+
 ## 03 依据与延伸阅读
 
 - [Nginx limit_req](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html)
 - [Nginx proxy 超时语义](https://nginx.org/en/docs/http/ngx_http_proxy_module.html)
 
+---
+
 ## 04 相关问题
 
 - [[八股/10-工程实践/06-容器与部署/04-项目是怎么部署的|项目是怎么部署的]]：入口代理与部署流程
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/11-前端/04-HTTP安全与集成/10-Nginx 在前端项目中承担什么作用？如何配置？（关联 工具与工程 3.2）|Nginx 在前端项目中承担什么作用？如何配置？（关联 工具与工程 3.2）]]：前端部署入口与代理配置
+
+---
 
 ## 06 所属专题
 

@@ -31,6 +31,8 @@ aliases:
 
 第三层识别业务操作：数据库唯一约束、条件更新或外部接口的幂等键判断“这个操作是否已成功”，不依赖它经由哪一个 Kafka offset 到达。三层是分析框架，不是 Kafka 自动提供的三个配置按钮。
 
+---
+
 ## 03 失败例子与事务身份
 
 假设读 offset 20 后写输出 Topic，再用普通 commitSync 提交输入位点。如果输出已提交、进程却在位点提交前宕机，重启后会再次处理 20。正确的 Kafka 内部方案是将输出与下一输入位点放入同一事务；失败时中止事务并重新处理。
@@ -38,6 +40,8 @@ aliases:
 transactional.id 应能标识一个逻辑生产任务，并在恢复时延续其身份；不同活跃任务不能随意共用同一 ID，否则会发生 fencing。反过来，每次随机生成新 ID 也可能失去对旧实例的正确隔离。具体生命周期遵循所用客户端或框架。
 
 若同一事务里还发了短信，中止 Kafka 事务不会撤回短信。因此外部操作仍要独立设计幂等与补偿；log compaction 按 key 清理旧日志也不等于阻止消费者看到重复。
+
+---
 
 ## 04 口述与依据
 
@@ -47,9 +51,13 @@ transactional.id 应能标识一个逻辑生产任务，并在恢复时延续其
 - [KafkaProducer 事务、fencing 与 sendOffsetsToTransaction](https://kafka.apache.org/41/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html)
 - [read_committed 消费隔离](https://kafka.apache.org/41/configuration/consumer-configs/)
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/05-消息队列与搜索/03-Kafka与消息语义/03-至少一次与恰好一次怎么选？消费幂等如何做|至少一次与恰好一次怎么选？消费幂等如何做]]：恰好一次边界与分层去重
+
+---
 
 ## 06 所属专题
 

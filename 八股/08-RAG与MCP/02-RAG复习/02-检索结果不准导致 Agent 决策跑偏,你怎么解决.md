@@ -20,6 +20,8 @@ aliases:
 
 记忆要点:四板斧 = 混合检索保召回、Reranker 保精度、提示词"没证据不许答"、评测集驱动迭代。
 
+---
+
 ## 02 决策跑偏要先限制影响
 
 先暂停高风险后续动作，回看支撑决策的具体证据与版本，区分无数据、错检索、错排序、误读和注入。相似度阈值需按模型与任务校准，不能把任意 0.8 当成可信概率。
@@ -28,15 +30,21 @@ aliases:
 
 口述：“先止住错误行动，再沿证据链定位首次偏离；只改 Prompt 说‘不许幻觉’不能替代数据、召回和执行校验。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/19-当 Agent 遇到无法解决的场景，应该怎么处理|当 Agent 遇到无法解决的场景，应该怎么处理？]]
 - [[八股/08-RAG与MCP/01-RAG检索增强/05-如何提升 RAG 检索质量|如何提升 RAG 检索质量？]]
 
+---
+
 ## 04 参考资料
 
 - [MCP 官方安全实践](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices)
 - [Elasticsearch 官方 kNN 文档](https://www.elastic.co/docs/solutions/search/vector/knn)
+
+---
 
 ## 05 所属专题
 

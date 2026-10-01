@@ -24,6 +24,8 @@ LCEL 是可选组件组合方式，不是 LangGraph 上线的必要前提。图�
 
 口述：“图治理既管下一步怎么走，也管崩溃、升级和取消时已经发生的动作。”相关：[[八股/07-AI与Agent/02-Agent原理与编排/21-Agent的checkpoint是什么|检查点恢复]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/10-Multi-Agent 实际项目怎么设计？LangGraph 里怎么编排更稳|Multi-Agent 实际项目怎么设计？LangGraph 里怎么编排更稳？]]
@@ -31,10 +33,14 @@ LCEL 是可选组件组合方式，不是 LangGraph 上线的必要前提。图�
 - [[八股/07-AI与Agent/07-框架协议与工程化/03-LangChain 和 LangGraph 的关系与区别|LangChain 和 LangGraph 的关系与区别？]]
 - [[八股/07-AI与Agent/09-Agent项目实践/10-灰度切流、在线双跑、回滚怎么设计|灰度切流、在线双跑、回滚怎么设计？]]
 
+---
+
 ## 04 参考资料
 
 - [LangChain 官方概览](https://docs.langchain.com/oss/python/langchain/overview)
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
+
+---
 
 ## 05 所属专题
 

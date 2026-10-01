@@ -23,17 +23,25 @@ aliases:
 
 两者不是绝对的“一个安全、一个不安全”：RDB 也可能因快照周期丢数据，AOF 也会受磁盘故障、刷盘策略和重写过程影响。生产配置要结合数据价值、写入量、恢复时间目标和磁盘容量；持久化不能替代高可用和备份，还要规划文件目录、磁盘空间、重写期间额外内存、恢复演练、主从复制和备份保留周期。缓存型数据可接受丢失，订单或权益数据应以 MySQL 等权威存储为准。
 
+---
+
 ## 02 理解机制与追问
 
 RDB 后台快照常通过 fork 和写时复制保留某时刻视图，写入越密集，快照期间额外内存压力可能越大。AOF 追加与 fsync 分开，appendfsync everysec 常描述为约一秒级损失窗口，但磁盘/系统异常仍需按实际故障模型看。重写是按现有数据重建恢复文件，不是压缩所有历史原始命令。
+
+---
 
 ## 03 易错点与适用边界
 
 版本补充：Redis 7 起支持多部分 AOF，由基础文件、增量文件和 manifest 管理；基础文件可使用 RDB 格式，不能只背“一个文本 AOF 文件”。RDB/AOF 恢复能力不等于副本故障切换零丢失。缓存可淘汰，唯一事实则不应与可任意淘汰数据混用策略。
 
+---
+
 ## 04 面试口述
 
 RDB 提供时点快照，AOF 记录变更并受刷盘策略控制；我会明确恢复点、恢复时间、fork/COW 峰值内存、磁盘空间和备份演练，而不是只说同时开启最安全。
+
+---
 
 ## 05 关联问题
 
@@ -44,11 +52,15 @@ RDB 提供时点快照，AOF 记录变更并受刷盘策略控制；我会明确
 - [[八股/04-Redis/02-数据结构与工程实践/24-Redis 内存满了怎么办|内存与 COW]]
 - [[八股/04-Redis/02-数据结构与工程实践/28-Redis 哨兵机制是什么|高可用并不等于持久化]]
 
+---
+
 ## 06 官方参考
 
 - [Redis RDB 与 AOF 持久化](https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/)
 - [Redis 复制机制](https://redis.io/docs/latest/operate/oss_and_stack/management/replication/)
 - [Redis 淘汰策略](https://redis.io/docs/latest/develop/reference/eviction/)
+
+---
 
 ## 07 所属专题
 

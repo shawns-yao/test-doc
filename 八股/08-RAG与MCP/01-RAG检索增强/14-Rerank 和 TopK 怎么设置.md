@@ -24,15 +24,21 @@ aliases:
 
 追问“固定 K 还是动态 K？”固定值易比较，动态策略可按信息密度与预算适配，但必须有可复现决策和回归测试。
 
+---
+
 ## 03 关联追问
 
 - [[八股/08-RAG与MCP/01-RAG检索增强/05-如何提升 RAG 检索质量|如何提升 RAG 检索质量？]]
 - [[八股/08-RAG与MCP/01-RAG检索增强/06-什么是 Lost in the Middle？怎么缓解|什么是 Lost in the Middle？怎么缓解？]]
 
+---
+
 ## 04 参考资料
 
 - [Elasticsearch 官方 kNN 文档](https://www.elastic.co/docs/solutions/search/vector/knn)
 - [BGE-M3 作者模型说明](https://huggingface.co/BAAI/bge-m3)
+
+---
 
 ## 05 所属专题
 

@@ -24,13 +24,19 @@ aliases:
 
 口述为可改编设计方案，不代表已经做过该产品。原文“经验”应理解为工程建议；面试若追问真实落地，需换成自己的可核实项目证据。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/27-ToB 和 ToC 的差异？技术上有什么变化|ToB 和 ToC 的差异？技术上有什么变化？]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
 
 ## 05 所属专题
 

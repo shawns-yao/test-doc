@@ -31,21 +31,29 @@ Redis 可以持久化，MySQL 也不是唯一审计存储；选型要由恢复�
 
 缓存更新常见 cache-aside：事务提交后失效缓存，再由读取回填；异步消息、版本号与定期核对处理传播失败。延迟双删不能从理论上保证所有并发读写都一致，高要求场景需更强版本校验或直接读权威库。
 
+---
+
 ## 03 锁失效为何仍要幂等
 
 锁只能协调一段有效期内的并发，执行时间超过租约、进程停顿或故障切换都可能让旧执行者继续写入。写入端可用版本条件、唯一约束或 fencing token 拒绝过期执行者，再结合业务幂等记录。
 
 口述：“Redis 负责快读和协调，权威存储负责可恢复事实；不能用一把分布式锁替代事务和幂等。”
 
+---
+
 ## 04 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/22-记忆具体存储在哪里|记忆具体存储在哪里]]
 - [[八股/08-RAG与MCP/01-RAG检索增强/19-RAG 缓存|RAG 缓存]]
 
+---
+
 ## 05 参考资料
 
 - [Redis 官方分布式锁说明](https://redis.io/docs/latest/develop/clients/patterns/distributed-locks/)
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
+
+---
 
 ## 06 所属专题
 

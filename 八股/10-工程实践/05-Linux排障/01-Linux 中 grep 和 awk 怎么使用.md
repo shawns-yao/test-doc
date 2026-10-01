@@ -45,14 +45,20 @@ grep "ERROR" app.log | awk '{print $NF}' | sort | uniq -c | sort -rn
 
 grep -c 数的是匹配行，不是每个匹配片段。awk 默认按空白字段处理，含引号逗号或多行的 CSV 不适合直接以逗号 split；JSON 日志也应使用结构化解析器。统计先明确时间范围、重复日志与缺失字段，否则命令跑通也可能算错。大文件 sort 可能外排到磁盘，先检查空间预算。
 
+---
+
 ## 03 依据与延伸阅读
 
 - [GNU grep 计数说明](https://www.gnu.org/software/grep/manual/html_node/General-Output-Control.html)
 - [GNU awk 字段](https://www.gnu.org/software/gawk/manual/html_node/Fields.html)
 
+---
+
 ## 04 相关问题
 
 - [[八股/10-工程实践/05-Linux排障/02-Linux CPU 过载时如何排查和优化|Linux CPU 过载时如何排查和优化]]：日志筛查与性能现场分析
+
+---
 
 ## 05 所属专题
 

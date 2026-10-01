@@ -27,26 +27,38 @@ RocksDB 更适合作为**本地状态存储、存储系统底层引擎、流处�
 
 **面试追问：**RocksDB 为什么适合做流处理状态后端（本地嵌入式 + 高写吞吐）；RocksDB 有 SQL 吗（没有，要自己建模）；什么场景选 RocksDB 而不是 MySQL（写密集 KV、嵌入场景）。
 
+---
+
 ## 02 理解机制与追问
 
 RocksDB 是库而 MySQL 是数据库服务，比较时先对齐层次：与 RocksDB 更接近的是 InnoDB 这类引擎，SQL、复制、权限、路由通常由更上层提供。RocksDB 有 WriteBatch、快照以及乐观/悲观事务接口，不能因它是 KV 就说它没有事务。
+
+---
 
 ## 03 易错点与适用边界
 
 WAL 可配置关闭，写入是否 fsync 也可配置，返回成功不自动等于断电不丢。快照和 iterator 还会延长旧版本/文件保留，必须释放。MySQL 发行版或扩展可以集成不同引擎，因此“RocksDB 与 MySQL”不必是互斥选择；本题主要比较 RocksDB 与 InnoDB。
 
+---
+
 ## 04 面试口述
 
 RocksDB 适合做嵌入式有序 KV 引擎，MySQL 提供完整关系数据库服务。选 RocksDB 要准备补上服务化与运维能力，并明确 WAL、同步写和事务配置。
+
+---
 
 ## 05 关联问题
 
 - [[八股/03-MySQL/03-存储引擎与索引结构/09-了解 LSM 树吗？它和 B+ 树有什么区别|LSM 机制]]
 - [[八股/03-MySQL/07-选型与工程实践/01-OLTP、OLAP、HTAP 常用数据库有哪些？怎么选型|数据库选型维度]]
 
+---
+
 ## 06 官方参考
 
 - [RocksDB 官方架构与事务能力](https://github.com/facebook/rocksdb/wiki/RocksDB-Overview)
+
+---
 
 ## 07 所属专题
 

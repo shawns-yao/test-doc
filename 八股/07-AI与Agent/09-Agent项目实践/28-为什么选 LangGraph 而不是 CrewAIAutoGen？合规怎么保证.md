@@ -24,6 +24,8 @@ LangGraph 提供显式状态与持久化/中断能力，可适合可恢复流程
 
 HIPAA、GDPR 与中国医疗产品监管并非同一套规则，也不是所有应用同时适用。是否涉及受保护健康信息、产品预期用途、参与主体、部署地与数据跨境等，需要由合规/法律及专业人员确认。checkpoint、私有部署或“零保留”配置都不是合规认证。
 
+---
+
 ## 03 技术措施的边界
 
 把姓名/MRN 替换成 token 可能仍可重识别，不能直接称为匿名化。还要考虑访问控制、身份认证、传输与存储保护、审计、保留删除、供应商协议及风险评估；日志与检查点本身也可能含敏感数据。只读到公开文献与处理患者资料应采用不同数据边界。
@@ -32,9 +34,13 @@ HIPAA、GDPR 与中国医疗产品监管并非同一套规则，也不是所有�
 
 口述：“选框架是实现可控流程，合规是适用规则、组织流程与技术控制共同满足，不能用框架名字代替审查。”
 
+---
+
 ## 04 关联追问
 
 - [[八股/07-AI与Agent/06-Agent安全/01-如何确保 Agent 安全、可控、可追责|如何确保 Agent 安全、可控、可追责？]]
+
+---
 
 ## 05 参考资料
 
@@ -44,9 +50,13 @@ HIPAA、GDPR 与中国医疗产品监管并非同一套规则，也不是所有�
 - [HHS HIPAA Security Rule 官方概述](https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html)
 - [HHS 去标识化官方说明](https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html)
 
+---
+
 ## 06 所属专题
 
 - [[八股/07-AI与Agent/09-Agent项目实践/00-Agent项目实践导航|Agent项目实践导航]]
+
+---
 
 ## 07 补充研究型多模态与访问控制示例
 

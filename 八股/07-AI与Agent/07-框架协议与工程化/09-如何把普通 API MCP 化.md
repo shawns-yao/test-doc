@@ -24,16 +24,22 @@ HTTP MCP Server 需单独验证访问令牌的受众和范围；若后端 API �
 
 验收包含未授权租户、无效对象 ID、重复写入、超时后已成功、超长返回和恶意参数等负例。口述：“MCP 化的是稳定业务能力，不是把所有管理员接口直接暴露给模型。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/19-交易平台为什么要做 Agent HubMCP|交易平台为什么要做 Agent Hub/MCP？]]
 - [[八股/08-RAG与MCP/03-MCP协议与工具/01-哪些工具适合放入MCP|哪些工具适合放入MCP]]
+
+---
 
 ## 04 参考资料
 
 - [MCP 2025-11-25 Tools 规范](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
 - [MCP 2025-11-25 Authorization 规范](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
 - [MCP 官方安全实践](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices)
+
+---
 
 ## 05 所属专题
 

@@ -20,6 +20,8 @@ aliases:
 
 记忆要点:规划决定"想清楚",工具决定"够得着",记忆决定"记得住",反馈决定"不跑偏"。
 
+---
+
 ## 02 模块如何连接
 
 以查工单为例：任务状态保存目标与授权范围，规划决定查哪个对象，工具执行器校验权限后取数据，反馈核验是否满足用户问题，再决定继续或结束。模型负责提出动作，执行器不应盲信其输出。
@@ -28,14 +30,20 @@ aliases:
 
 追问“为什么加可观测性？”要知道首次偏离发生在理解、取证还是执行，否则只看终答无法定位。口述：“核心不是模块数，而是带权限和可验证反馈的闭环。”见[[八股/07-AI与Agent/02-Agent原理与编排/12-Agent 工具调用的完整业务流程|工具调用链路]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/03-AI Agent 的基本实现路径是什么|AI Agent 的基本实现路径是什么？]]
+
+---
 
 ## 04 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
+
+---
 
 ## 05 所属专题
 

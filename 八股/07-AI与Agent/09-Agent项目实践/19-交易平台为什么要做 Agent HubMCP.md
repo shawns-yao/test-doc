@@ -20,6 +20,8 @@ aliases:
 
 Hub 可提供目录、版本、授权入口、计量和审计，MCP 统一能力发现与调用协议。但协议本身不实现额度检查、订单幂等或合规审查，这些仍需平台的执行网关与业务服务负责。“接入从周级到天级”只有真实测量才可讲，不能当通用收益。
 
+---
+
 ## 03 设计风险与验证
 
 中心化入口减少重复接入，同时形成集中故障域与高价值攻击面。应隔离租户、按工具和账户限流、固定版本、验证工具描述与供应链，并给原生 API 与 MCP 同等硬权限控制，避免其中一条路径绕过风控。
@@ -28,15 +30,21 @@ Hub 可提供目录、版本、授权入口、计量和审计，MCP 统一能力
 
 口述：“平台把接入、治理和可追责做成公共能力，MCP 降低适配成本，但安全保证来自独立执行控制。”
 
+---
+
 ## 04 关联追问
 
 - [[八股/07-AI与Agent/07-框架协议与工程化/09-如何把普通 API MCP 化|如何把普通 API MCP 化？]]
+
+---
 
 ## 05 参考资料
 
 - [MCP 2025-11-25 Tools 规范](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
 - [MCP 2025-11-25 Authorization 规范](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
 - [MCP 官方安全实践](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices)
+
+---
 
 ## 06 所属专题
 

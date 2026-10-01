@@ -26,6 +26,8 @@ aliases:
 
 search_after 根据排序游标续查，避免为了跳过前面所有页保留巨大候选集；它仍要执行过滤、排序等工作，不能泛称为常数时间或无成本分页。依据：[官方分页方案](https://www.elastic.co/docs/reference/elasticsearch/rest-apis/paginate-search-results)。
 
+---
+
 ## 03 PIT 与游标的正确配合
 
 1. 为目标索引打开 PIT，确定查询条件、稳定排序与页大小
@@ -39,6 +41,8 @@ PIT 固定一个搜索视图，让翻页期间的新增、更新和删除不会�
 
 依据：[PIT API 与资源生命周期](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-open-point-in-time)、[_id 的排序限制](https://www.elastic.co/docs/reference/elasticsearch/mapping-reference/mapping-id-field)。
 
+---
+
 ## 04 产品取舍与口述
 
 search_after 天然适合下一页或滚动加载，不直接支持随意跳到第 N 页。若必须跳页，可限制页深、存短期分页锚点，或把固定结果集预生成；锚点需要与查询和视图绑定，不能跨条件复用。大批量导出还应限制并发、只取所需字段，并使用可恢复进度。
@@ -47,9 +51,13 @@ search_after 天然适合下一页或滚动加载，不直接支持随意跳到�
 
 > 返回导航：[[八股/00-总导航|00-总导航]]
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/05-消息队列与搜索/04-Elasticsearch/04-Elasticsearch 数据写入与查询原理|Elasticsearch 数据写入与查询原理]]：检索执行与分页一致性
+
+---
 
 ## 06 所属专题
 

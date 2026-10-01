@@ -26,14 +26,20 @@ aliases:
 
 口述：“默认模型与外部内容可能出错，让最小权限、独立执行校验和审计把错误限制在可控范围。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/28-为什么选 LangGraph 而不是 CrewAIAutoGen？合规怎么保证|为什么选 LangGraph 而不是 CrewAI/AutoGen？合规怎么保证？]]
 - [[八股/07-AI与Agent/13-Agent生产复习/03-Agent 出现幻觉、瞎调工具,线上怎么兜底|Agent 出现幻觉、瞎调工具,线上怎么兜底?]]
 
+---
+
 ## 04 参考资料
 
 - [MCP 官方安全实践](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices)
+
+---
 
 ## 05 直接追问：安全与体验冲突时如何平衡
 
@@ -42,6 +48,8 @@ aliases:
 体验指标与安全指标分别看：记录误拦率、澄清/审批耗时和任务完成率，同时单独守住越权、泄露与不可逆误执行门槛。若误拦高，修正策略和交互设计；不要通过扩大默认权限来“优化成功率”。
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的题目与资料](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/07_%E5%AE%89%E5%85%A8%E4%B8%8E%E9%A3%8E%E6%8E%A7/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L9-L21)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。补充源资料的安全与体验追问；仅提出风险分层与评估方法，不替具体业务设定审批政策。 许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
+
+---
 
 ## 06 所属专题
 - [[八股/07-AI与Agent/06-Agent安全/00-Agent安全导航|Agent安全导航]]

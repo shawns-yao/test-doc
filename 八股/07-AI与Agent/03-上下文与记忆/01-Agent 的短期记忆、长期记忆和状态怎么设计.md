@@ -30,15 +30,21 @@ aliases:
 
 追问“放哪里”见[[八股/07-AI与Agent/02-Agent原理与编排/22-记忆具体存储在哪里|记忆物理存储]]；“如何恢复任务”见[[八股/07-AI与Agent/02-Agent原理与编排/21-Agent的checkpoint是什么|checkpoint]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/06-规则知识库和 embedding memory 的差别|规则知识库和 embedding memory 的差别？]]
 - [[八股/07-AI与Agent/10-Agent基础复习/04-Agent 的记忆分哪几种短期记忆和长期记忆分别怎么落地|Agent 的"记忆"分哪几种?短期记忆和长期记忆分别怎么落地?]]
 
+---
+
 ## 04 参考资料
 
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
 - [pgvector 官方文档](https://github.com/pgvector/pgvector)
+
+---
 
 ## 05 直接追问：一条长期记忆怎样写入、召回并参与回答
 
@@ -49,6 +55,8 @@ aliases:
 使用时，把必要的原文片段或结构化事实连同来源注入本轮上下文，保留与用户当前指令的冲突检查；没有可靠命中就明确缺少历史依据。用户纠正后，源记录、索引、摘要和缓存都要同步失效旧版本。这样才形成“写入 → 召回 → 核验 → 使用 → 纠错”的闭环。
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的原题与资料](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/04_%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B7%A5%E7%A8%8B%E4%B8%8E%E8%AE%B0%E5%BF%86/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L36-L43)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。补回原资料明确展开、旧答案仅以“RAG 范式”概括的记忆读写流程，并接入本篇已有的权限、版本和纠错约束。 许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
+
+---
 
 ## 06 所属专题
 

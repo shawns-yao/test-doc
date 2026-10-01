@@ -25,17 +25,18 @@ CMS/ParNew 是历史对比，JDK 21 不再提供 CMS。G1 常作为在线服务�
 
 比较要固定业务负载、CPU 配额和总内存预算，观察吞吐、请求 P99/P999、分配停顿、GC CPU 和存活集。更低 GC pause 不一定等于更低端到端延迟，因为并发回收会竞争 CPU，还可能发生分配等待。
 
-## 03 校正与参考
-
-本次保留 CMS 历史知识，修正 G1 无碎片、停顿硬保证和固定堆阈值。
-
+参考：
 - [Oracle：可用收集器与选择](https://docs.oracle.com/en/java/javase/21/gctuning/available-collectors.html)
 - [Oracle：已移除的组件与 CMS](https://docs.oracle.com/en/java/javase/21/migrate/removed-tools-and-components.html)
 
-## 04 相关问题与延伸
+---
+
+## 03 相关问题与延伸
 
 - [[八股/01-Java/04-Java虚拟机/08-G1 的核心思想是什么|G1 的核心思想是什么]]：收集器选型与G1机制
 
-## 05 所属专题
+---
+
+## 04 所属专题
 
 - [[八股/01-Java/04-Java虚拟机/00-Java虚拟机导航|Java虚拟机导航]]

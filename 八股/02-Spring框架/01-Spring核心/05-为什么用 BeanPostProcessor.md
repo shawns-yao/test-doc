@@ -26,12 +26,16 @@ BeanFactoryPostProcessor 面向定义，可修改 BeanDefinition 的属性；Bea
 
 @PostConstruct 通常由一个后置处理器在 beforeInitialization 链中触发，再执行 InitializingBean 和自定义 init。AOP 通常在 afterInitialization 创建最终代理，但循环依赖时也可能经 SmartInstantiationAwareBeanPostProcessor 提供早期引用。
 
+---
+
 ## 03 实际风险与参考
 
 BPP 及其直接依赖会很早初始化，可能不适合被其他自动代理完整处理；在 BPP 中主动 getBean 还可能提前创建目标。顺序应使用受支持的 PriorityOrdered/Ordered 等约定并确认注册方式，不应依赖类路径碰巧扫描的顺序。
 
 - [Spring 容器扩展点](https://docs.spring.io/spring-framework/reference/core/beans/factory-extension.html)
 - [[八股/02-Spring框架/02-Bean生命周期/01-Spring Bean 从实例化到销毁的完整生命周期流程是什么|初始化回调的实际位置]]
+
+---
 
 ## 04 所属专题
 

@@ -14,7 +14,7 @@ aliases:
 
 **生成阶段（忠实、准确、有用）：**① **Faithfulness/Groundedness（可溯源性）**——答案是否完全基于上下文、有无幻觉；② **Answer Relevancy**——是否直接回答用户问题；③ **Answer Correctness**——事实是否准确（更严格，原文也可能错）。
 
-**自动化框架：****RAGAS、ARES、TruLens** 用 LLM-as-a-Judge 把 Faithfulness/Relevancy 等指标自动化计算，提高评估效率。
+**自动化框架：** **RAGAS、ARES、TruLens** 用 LLM-as-a-Judge 把 Faithfulness/Relevancy 等指标自动化计算，提高评估效率。
 
 ---
 
@@ -26,15 +26,21 @@ Faithfulness 表示答案能否由给定材料支持，不证明材料本身真�
 
 口述：“分层评价检索与生成，并把自动裁判当需校准的测量器，不能直接用其分数当事实。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/05-评测与可观测性/05-如何评估事实性、推理能力、安全性|如何评估事实性、推理能力、安全性？]]
 - [[八股/07-AI与Agent/09-Agent项目实践/24-怎么降低「假引用」和幻觉|怎么降低「假引用」和幻觉？]]
 
+---
+
 ## 04 参考资料
 
 - [RAG 原论文](https://arxiv.org/abs/2005.11401)
 - [LLM-as-a-Judge 研究](https://arxiv.org/abs/2306.05685)
+
+---
 
 ## 05 直接追问：排名指标怎样计算，检索回归怎样执行
 
@@ -56,6 +62,8 @@ MRR 只关心第一个相关结果，不能代替多跳任务的全部证据覆�
 这套回归检查的是证据可用性与结果质量，不要求更新后所有排名保持原样。评测集的文档、查询、相关性判断和独立测试原则可参考 [《信息检索导论》评估章节](https://nlp.stanford.edu/IR-book/pdf/08eval.pdf)。
 
 来源与改写说明：本节依据 [goehou/agent_java_offer 仓库贡献者的原题与资料](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/01_AI/03_RAG/01_%E6%A0%B8%E5%BF%83%E9%97%AE%E7%AD%94.md#L319-L343)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充。补全原题的检索回归追问和被压缩的排名指标定义；新增计算示例与可复现步骤，不把示例数值作为项目成果。 许可说明仅对应本节引入的来源内容，不改变本篇其他原有内容的许可。
+
+---
 
 ## 06 所属专题
 

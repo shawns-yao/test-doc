@@ -23,6 +23,8 @@ aliases:
 
 截至 2026-09-30 的官方仓库核验，vanna-ai/vanna 已于 2026-03-29 归档为只读，可用于学习 Text-to-SQL 的交互与权限设计，但不能无条件推荐为持续维护中的生产依赖。DB-GPT 可作为数据应用与 Text-to-SQL 工程参考；DataHub、OpenMetadata 首先是元数据治理平台，不应一概称为同类 Agent 框架。Dataherald 等候选需在选型时另查维护与许可状态。
 
+---
+
 ## 03 面试怎么讲得具体
 
 只挑实际阅读或运行过的项目，解释请求如何进入、如何获得 schema、生成 SQL 后如何校验，以及用户身份在哪一步影响查询。未用过就明确说“研究过设计”，不要背“踩坑经历”。
@@ -31,9 +33,13 @@ aliases:
 
 口述：“我会区分数据底座与 Agent 框架，挑一个具体机制讲清楚，再说明当前维护状态和生产差距。”
 
+---
+
 ## 04 关联追问
 
 - [[八股/07-AI与Agent/08-数据Agent设计/01-如果让你提升 Agent 生成 SQL 或数据链路的准确率，你会怎么做|如果让你提升 Agent 生成 SQL 或数据链路的准确率，你会怎么做？]]
+
+---
 
 ## 05 参考资料
 
@@ -41,6 +47,8 @@ aliases:
 - [DB-GPT 官方仓库](https://github.com/eosphoros-ai/DB-GPT)
 - [DataHub 官方仓库](https://github.com/datahub-project/datahub)
 - [OpenMetadata 标准](https://docs.open-metadata.org/v2.0.x/main-concepts/metadata-standard)
+
+---
 
 ## 06 所属专题
 

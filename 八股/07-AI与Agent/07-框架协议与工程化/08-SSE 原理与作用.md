@@ -24,16 +24,22 @@ aliases:
 
 按 MCP 2025-11-25 规范，标准远程传输是 Streamable HTTP，可使用 SSE；旧 HTTP+SSE 是历史传输，见[[八股/08-RAG与MCP/03-MCP协议与工具/02-MCP使用了哪些协议|MCP 传输版本差异]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/09-Agent项目实践/12-交易系统为什么优先用 WebSocket？REST 怎么配合|交易系统为什么优先用 WebSocket？REST 怎么配合？]]
 - [[八股/07-AI与Agent/09-Agent项目实践/26-用 Python 搭 AI 服务后端|用 Python 搭 AI 服务后端？]]
 - [[八股/07-AI与Agent/09-Agent项目实践/39-长时间视频生成怎样向前端报告可靠进度|长时间视频生成怎样向前端报告可靠进度]]
 
+---
+
 ## 04 参考资料
 
 - [WHATWG SSE 标准](https://html.spec.whatwg.org/multipage/server-sent-events.html)
 - [MCP 2025-11-25 Transports 规范](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports)
+
+---
 
 ## 05 所属专题
 

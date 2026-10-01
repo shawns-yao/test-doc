@@ -25,6 +25,8 @@ Elasticsearch 是一个基于 Lucene 的分布式搜索和分析引擎，常用�
 
 依据：[字段映射](https://www.elastic.co/docs/manage-data/data-store/mapping)、[Keyword 字段](https://www.elastic.co/docs/reference/elasticsearch/mapping-reference/keyword)。
 
+---
+
 ## 03 同步链路比调用 API 更重要
 
 MySQL 到 ES 要明确全量初始化、增量来源、删除事件、版本顺序和重试。用业务 ID 作为稳定文档 ID 可以避免重试新增出多份文档，但无法独自阻止旧事件覆盖新状态；需要有序消费、业务版本校验或适用的版本控制。ES 的 if_seq_no/if_primary_term 处理 ES 内部并发修改，不能直接把 MySQL 的版本号当作这两个参数。
@@ -32,6 +34,8 @@ MySQL 到 ES 要明确全量初始化、增量来源、删除事件、版本顺�
 Bulk 返回 HTTP 成功不代表每条操作都成功，应检查 items，按错误类型处理失败项：映射错误修复数据，临时拒绝做有限退避重试，避免无差别重发整批。写成功但搜索不可见时先判断 refresh，而不是马上补写一份。
 
 依据：[Bulk API 的逐项结果](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-bulk)、[乐观并发控制](https://www.elastic.co/docs/reference/elasticsearch/rest-apis/optimistic-concurrency-control)。
+
+---
 
 ## 04 变更与口述
 
@@ -42,9 +46,13 @@ Bulk 返回 HTTP 成功不代表每条操作都成功，应检查 items，按错
 - [Mapping 更新限制](https://www.elastic.co/docs/manage-data/data-store/mapping/update-mappings-examples)
 - [别名及多动作切换](https://www.elastic.co/docs/manage-data/data-store/aliases)
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/05-消息队列与搜索/04-Elasticsearch/02-Elasticsearch 有哪些核心特性|Elasticsearch 有哪些核心特性]]：使用路径与搜索引擎能力
+
+---
 
 ## 06 所属专题
 

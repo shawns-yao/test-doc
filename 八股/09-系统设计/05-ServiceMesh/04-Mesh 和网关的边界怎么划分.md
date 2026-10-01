@@ -24,11 +24,15 @@ aliases:
 
 用户登录、应用 key、套餐配额和公开 API 文档适合入口治理；内部工作负载身份、服务连接策略适合 Mesh；订单归属、库存状态、账户权限等业务规则仍由领域服务判定。入口认证通过后传播的用户身份也必须可信，不能任由下游相信外部可伪造的 Header。
 
+---
+
 ## 03 一条调用链只分配一份总预算
 
 网关、服务 SDK、Sidecar 都可能配置超时、重试和限流。需要明确谁做重试、各阶段能用多少剩余时间，以及重试是否计入配额；否则三层各尝试三次可能放大到底层 27 次调用。业务返回的永久失败也不应被代理当成传输抖动重试。
 
 外部 TLS 在入口终止后，内部仍可重新建立 mTLS；两段认证的主体和信任域不同。口述：“按用户/API治理与工作负载通信治理分工，但实际拓扑可组合。关键是身份能验证、预算不重复、领域规则留在业务层。”
+
+---
 
 ## 04 双层限流怎样避免重复扣配额和误拒
 
@@ -38,6 +42,8 @@ aliases:
 
 本轮深度复核补充：原页提到了双层限流，却只展开重试放大，未回答配额计数和窗口差异。依据 [Repository contributors 的网关/Mesh追问](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/02_后端/09_RPC与网关治理/01_核心问答.md#L126)（[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)）补充参考设计，本节许可范围与原有正文区分。
 
+---
+
 ## 05 依据与关联问题
 
 - [Istio Ingress Gateway](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/)
@@ -45,6 +51,8 @@ aliases:
 - [gRPC Deadlines](https://grpc.io/docs/guides/deadlines/)
 - [[八股/09-系统设计/04-网关与流量治理/01-网关的职责边界是什么|网关职责]]
 - [[八股/09-系统设计/03-RPC与注册中心/04-RPC 的超时、重试、熔断怎么配|总超时与重试预算]]
+
+---
 
 ## 06 所属专题
 

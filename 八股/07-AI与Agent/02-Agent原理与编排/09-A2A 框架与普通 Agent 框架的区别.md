@@ -22,13 +22,19 @@ A2A 是应用层 Agent 互操作协议，不能等同或类比成替代 HTTP 的
 
 追问“A2A 与 MCP 冲突吗？”不必冲突：前者主要连接代理协作，后者主要连接模型应用和工具/数据；具体系统可以组合，两者都不保证业务任务本身正确。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/12-多Agent复习/02-Agent 之间怎么通信、怎么分工听说过 Orchestrator 模式吗|Agent 之间怎么通信、怎么分工?听说过 Orchestrator 模式吗?]]
 
+---
+
 ## 04 参考资料
 
 - [A2A 官方规范](https://a2a-protocol.org/latest/specification/)
+
+---
 
 ## 05 所属专题
 

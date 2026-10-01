@@ -29,18 +29,26 @@ aliases:
 
 **面试追问：**reset --hard 后还能找回提交吗（仍保留的提交可能经 reflog 找回，未提交内容不保证可恢复）；revert 和 cherry-pick 的关系（反向后应用 vs 正向应用）；rebase 和 merge 的区别。
 
+---
+
 ## 02 理解补充与边界校订
 
 旧文 reset 的结论特指带提交目标的分支移动形式；按路径 reset 主要更新暂存区，不移动分支。reflog 能找回仍存在的提交，不保证恢复从未提交的工作区内容，也受过期和垃圾回收影响。共享分支优先 revert，但合并提交需要理解 mainline 与后续再合并的语义。
+
+---
 
 ## 03 依据与延伸阅读
 
 - [Git reset 官方说明](https://git-scm.com/docs/git-reset)
 - [Git revert 官方说明](https://git-scm.com/docs/git-revert)
 
+---
+
 ## 04 相关问题
 
 - [[八股/10-工程实践/06-容器与部署/08-变更三板斧怎么落地到工程体系|变更三板斧怎么落地到工程体系]]：代码回退与完整发布回滚
+
+---
 
 ## 05 所属专题
 

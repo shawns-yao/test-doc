@@ -27,6 +27,8 @@ BeanDefinition 是对象创建与装配的元数据，Bean 是按定义产生的
 
 singleton 表示每个容器中每个 Bean 定义通常一个实例，不是全 JVM 永远只有一个对象，也不自动保证线程安全。无状态服务可共享；可变请求数据应避免放在单例字段中。单例直接注入 prototype 时通常只在自身创建时解析一次，需要按次获取则用 ObjectProvider 或作用域代理。
 
+---
+
 ## 03 口述与参考
 
 IoC 解决对象图由谁组装，DI 是常见实现方式；它把依赖显式化并统一管理生命周期，但仍需设计清晰的职责与作用域。
@@ -34,9 +36,13 @@ IoC 解决对象图由谁组装，DI 是常见实现方式；它把依赖显式�
 - [Spring 依赖注入与构造器/Setter取舍](https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html)
 - [[八股/02-Spring框架/02-Bean生命周期/01-Spring Bean 从实例化到销毁的完整生命周期流程是什么|对象创建之后的生命周期]]
 
+---
+
 ## 04 相关问题与延伸
 
 - [[八股/02-Spring框架/01-Spring核心/06-ApplicationContext 和 BeanFactory 的区别|ApplicationContext 和 BeanFactory 的区别]]：容器接口能力与IoC依赖管理
+
+---
 
 ## 05 所属专题
 

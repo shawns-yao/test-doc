@@ -46,11 +46,15 @@ static List<Integer> shortestPath(List<int[]>[] graph, int s, int t) {
 }
 ```
 
+---
+
 ## 02 复杂度
 
 时间：重复入堆实现为 O(V + E log(E + 1))，还原路径 O(V)。
 
 空间：辅助距离、前驱及结果 O(V)，堆最坏 O(E)，合计 O(V + E)，不含输入邻接表；不是 decrease-key 堆的 O(V) 辅助空间。
+
+---
 
 ## 03 相关问题
 
@@ -58,9 +62,13 @@ static List<Integer> shortestPath(List<int[]>[] graph, int s, int t) {
 - [[八股/12-算法/01-算法题/28-二叉树最近公共祖先（LCA）怎么做|二叉树最近公共祖先（LCA）怎么做]]
 - [[八股/12-算法/01-算法题/50-单词接龙怎样按层寻找最短转换|单词接龙怎样按层寻找最短转换]]
 
+---
+
 ## 04 来源与改写说明
 
 题目线索：goehou/agent_java_offer 的 Repository contributors，[项目场景题](https://github.com/goehou/agent_java_offer/blob/298656dc4d0fb5f7db107fc6463f11230b3a49f7/docs/interview_prep/05_项目表达/04_搜索推荐平台/01_核心问答.md)，固定版本 `298656dc4d0fb5f7db107fc6463f11230b3a49f7`。原题线索采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)；本页重新组织为独立问题，并补写 Java 核心方法和复杂度边界，不保留公司押题、命中率或个人履历式表述。许可范围见 [[八股/96-外部资料来源与许可说明|外部资料来源与许可说明]]。
+
+---
 
 ## 05 所属专题
 

@@ -26,13 +26,19 @@ aliases:
 
 追问“是否一定要四层？”四层是便于讨论的工程分解，不是定义要求。口述可先给闭环，再用[[八股/07-AI与Agent/02-Agent原理与编排/12-Agent 工具调用的完整业务流程|一次工具调用]]解释每层职责。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/10-Agent基础复习/01-Agent 和普通 Chatbot、和传统 RPA 的本质区别是什么|Agent 和普通 Chatbot、和传统 RPA 的本质区别是什么?]]
 
+---
+
 ## 04 参考资料
 
 - [Anthropic 关于工作流与 Agent 的工程说明](https://www.anthropic.com/engineering/building-effective-agents)
+
+---
 
 ## 05 所属专题
 

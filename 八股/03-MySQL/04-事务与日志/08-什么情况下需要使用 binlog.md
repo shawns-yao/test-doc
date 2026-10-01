@@ -26,27 +26,39 @@ aliases:
 
 **面试追问：**row 和 statement 格式怎么选（准确 vs 体积）；binlog 保留多久（备份周期 + 恢复窗口）；Canal 是什么（订阅 binlog 的 CDC 工具）。
 
+---
+
 ## 02 理解机制与追问
 
 时间点恢复要先拿到可用全量备份及其起始位点，再回放连续 binlog 到目标事务之前；只有 binlog 而没有基线通常不能重建完整数据库。CDC 还需处理快照与增量衔接、事务边界、DDL 变更、重复事件和断点续读。GTID 标识事务，不能单独保证下游业务幂等。
+
+---
 
 ## 03 易错点与适用边界
 
 版本边界：8.4 应优先使用 ROW；STATEMENT/MIXED 作为历史格式理解，不能按“节省日志”不加评估地选择。ROW 是行事件并非一定含每列完整前后值，受 binlog_row_image 等配置影响。保留时长要覆盖最长故障恢复、消费积压和备份窗口，删除前确认所有消费者可续接。
 
+---
+
 ## 04 面试口述
 
 binlog 用于复制、备份增量回放和 CDC。真正上线要同时设计连续位点、日志保留、事件幂等、模式演进和恢复演练。
+
+---
 
 ## 05 关联问题
 
 - [[八股/03-MySQL/04-事务与日志/06-MySQL 除了 redo log 还有哪些日志？redo log 中保存什么内容|日志分类]]
 - [[八股/03-MySQL/06-高可用与扩展/06-不停机迁移到分库分表怎么做|迁移中的 CDC]]
 
+---
+
 ## 06 官方参考
 
 - [MySQL 8.4 二进制日志参数](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html)
 - [MySQL 8.4 复制线程](https://dev.mysql.com/doc/refman/8.4/en/replication-threads.html)
+
+---
 
 ## 07 所属专题
 

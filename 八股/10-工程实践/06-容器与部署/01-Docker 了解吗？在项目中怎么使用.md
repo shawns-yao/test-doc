@@ -47,13 +47,19 @@ docker compose up -d      # 多容器编排启动
 
 镜像 tag 通常可以被重新指向，并非天然不可变；发布固定 digest 可提升可追溯性。容器共享宿主内核，镜像也受 CPU 架构和内核能力影响，因此「到处运行」有兼容前提。现代 Kubernetes 通过 CRI 使用 containerd 等运行时，Docker 构建的 OCI 镜像可用，不等于集群必须运行 Docker Engine。
 
+---
+
 ## 03 依据与延伸阅读
 
 - [Docker 构建最佳实践](https://docs.docker.com/build/building/best-practices/)
 
+---
+
 ## 04 相关问题
 
 - [[八股/10-工程实践/06-容器与部署/03-Kubernetes 了解吗|Kubernetes 了解吗]]：容器打包与声明式编排
+
+---
 
 ## 05 所属专题
 

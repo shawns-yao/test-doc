@@ -27,11 +27,15 @@ text 保留分词与位置等信息帮助匹配和评分，keyword 通常用于�
 
 依据：[doc values 的访问模式](https://www.elastic.co/docs/reference/elasticsearch/mapping-reference/doc-values)、[Keyword 字段族](https://www.elastic.co/docs/reference/elasticsearch/mapping-reference/keyword)。
 
+---
+
 ## 03 分布式和分析能力的代价
 
 副本可以承接不同搜索请求，并在故障后被提升，但一次搜索通常只选择每个相关分片的一份副本；副本数翻倍不保证单次查询延迟减半。一次查询扇出到越多分片，协调、网络和尾部慢分片的影响越明显。新增节点也需有合适分片可分配，不能凭“天然分布式”推导无限线性扩展。
 
 聚合也需区分语义：分布式 terms top buckets 可能带来计数误差，返回的 topN 不是所有分类；精确全量枚举应选择合适的分页聚合等方案。不能因为结果有一个整数就默认全量精确。依据：[分布式读取模型](https://www.elastic.co/docs/deploy-manage/distributed-architecture/reading-and-writing-documents)、[Terms 聚合与误差](https://www.elastic.co/docs/reference/aggregations/search-aggregations-bucket-terms-aggregation)。
+
+---
 
 ## 04 边界追问与口述
 
@@ -44,10 +48,14 @@ text 保留分词与位置等信息帮助匹配和评分，keyword 通常用于�
 
 补充依据：[近实时搜索](https://www.elastic.co/docs/manage-data/data-store/near-real-time-search)、[Mapping](https://www.elastic.co/docs/manage-data/data-store/mapping)。
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/05-消息队列与搜索/04-Elasticsearch/01-Elasticsearch 怎么使用|Elasticsearch 怎么使用]]：使用路径与搜索引擎能力
 - [[八股/05-消息队列与搜索/04-Elasticsearch/04-Elasticsearch 数据写入与查询原理|Elasticsearch 数据写入与查询原理]]：搜索能力背后的写入和查询链路
+
+---
 
 ## 06 所属专题
 

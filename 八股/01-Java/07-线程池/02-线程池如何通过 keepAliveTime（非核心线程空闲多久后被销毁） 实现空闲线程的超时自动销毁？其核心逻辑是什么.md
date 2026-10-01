@@ -27,16 +27,17 @@ ThreadPoolExecutor 的取任务逻辑按当前 worker 总数、corePoolSize 和 
 
 缩短 keepAliveTime 是空闲资源策略，不会终止正在运行的慢任务。业务超时应在 Future/客户端/任务协作取消层处理；允许核心超时时须保证 keepAliveTime 大于 0。
 
-## 03 校正与参考
-
-边界以 ThreadPoolExecutor 契约为准，运行中饱和、关闭与执行异常应分别处理。
-
+参考：
 - [ThreadPoolExecutor：排队、回收、拒绝与监控](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ThreadPoolExecutor.html)
 
-## 04 相关问题与延伸
+---
+
+## 03 相关问题与延伸
 
 - [[八股/01-Java/07-线程池/01-线程池提交任务后的核心执行流程是什么？请说明完整处理顺序|线程池提交任务后的核心执行流程是什么？请说明完整处理顺序]]：任务接收顺序与工作线程退出
 
-## 05 所属专题
+---
+
+## 04 所属专题
 
 - [[八股/01-Java/07-线程池/00-线程池导航|线程池导航]]

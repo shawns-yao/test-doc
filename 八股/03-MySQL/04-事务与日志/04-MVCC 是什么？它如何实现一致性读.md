@@ -17,17 +17,25 @@ aliases:
 
 **面试追问：**快照读和当前读的区别（版本链 vs 最新+锁）；RR 和 RC 的 Read View 差异（一次 vs 每次）；undo log 为什么不能一直删（活跃事务还要看旧版本）；MVCC 能防幻读吗（快照读可以，当前读靠锁）；长事务为什么危险（undo 膨胀 + 历史链变长）。
 
+---
+
 ## 02 理解机制与追问
 
 Read View 的判断可按概念水位理解：版本属于本事务则可见；版本事务号早于所有仍活跃事务的低界通常可见；达到视图创建时“下一个事务号”的高界则不可见；落在中间的要看是否在当时活跃事务集合中。不可见就沿 undo 找更旧版本。事务号大小本身不代表提交顺序。
+
+---
 
 ## 03 易错点与适用边界
 
 原答案“视图创建后才提交不可见”针对其他事务，必须补上“本事务自己的写入可见”的例外。RR 通常复用首次一致性读视图，RC 每条一致性读使用新视图。长事务保留旧快照会拖慢 purge，但不是所有长事务都等量制造 undo；应结合最老视图与更新量诊断。
 
+---
+
 ## 04 面试口述
 
 MVCC 用事务标记、Read View 和 undo 版本链选择当前事务可见的版本，降低普通读写互斥。它不替代更新锁，也不自动解决业务上的并发写冲突。
+
+---
 
 ## 05 关联问题
 
@@ -38,11 +46,15 @@ MVCC 用事务标记、Read View 和 undo 版本链选择当前事务可见的�
 - [[八股/03-MySQL/04-事务与日志/03-MySQL 默认隔离级别是什么？可重复读解决幻读了吗|RR 与混合读]]
 - [[八股/03-MySQL/04-事务与日志/06-MySQL 除了 redo log 还有哪些日志？redo log 中保存什么内容|undo 与其他日志]]
 
+---
+
 ## 06 官方参考
 
 - [MySQL 8.4 多版本实现](https://dev.mysql.com/doc/refman/8.4/en/innodb-multi-versioning.html)
 - [MySQL 8.4 一致性非锁定读](https://dev.mysql.com/doc/refman/8.4/en/innodb-consistent-read.html)
 - [MySQL 8.4 隔离级别](https://dev.mysql.com/doc/refman/8.4/en/innodb-transaction-isolation-levels.html)
+
+---
 
 ## 07 所属专题
 

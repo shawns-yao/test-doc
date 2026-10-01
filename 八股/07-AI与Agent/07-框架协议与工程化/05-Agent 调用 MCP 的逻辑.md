@@ -24,10 +24,14 @@ aliases:
 
 追问“连接一建立就能调所有工具吗？”不能，初始化能力协商与每次业务鉴权是两层。详见[[八股/08-RAG与MCP/03-MCP协议与工具/02-MCP使用了哪些协议|MCP 协议与授权]]。
 
+---
+
 ## 03 参考资料
 
 - [MCP 2025-11-25 Tools 规范](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
 - [MCP 2025-11-25 Authorization 规范](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
+
+---
 
 ## 04 所属专题
 

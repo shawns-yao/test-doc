@@ -20,11 +20,15 @@ FastAPI 的 async 适合非阻塞 I/O，但同步 HTTP 客户端、重 CPU 解�
 
 重要长任务由持久队列和状态存储承接，worker 做幂等处理、重试、租约与超时控制。API 返回任务 ID，客户端通过查询或 SSE 观察进度；worker 崩溃后可核验上次副作用再恢复。
 
+---
+
 ## 03 服务治理
 
 复用连接池，控制模型 API 并发与供应商配额，取消请求时明确是否继续后台工作；区分客户端超时、模型超时和任务截止时间。上传文件与产物设权限、大小和保留期，日志不含密钥或整段私人材料。
 
 口述：“HTTP 层负责交互，持久任务系统负责可靠执行，异步语法不等于任务有恢复能力。”
+
+---
 
 ## 04 关联追问
 
@@ -32,10 +36,14 @@ FastAPI 的 async 适合非阻塞 I/O，但同步 HTTP 客户端、重 CPU 解�
 - [[八股/07-AI与Agent/07-框架协议与工程化/08-SSE 原理与作用|SSE 原理与作用？]]
 - [[八股/07-AI与Agent/09-Agent项目实践/22-从 0 到 1 搭 AI 后端服务怎么拆|从 0 到 1 搭 AI 后端服务怎么拆？]]
 
+---
+
 ## 05 参考资料
 
 - [FastAPI BackgroundTasks 官方说明](https://fastapi.tiangolo.com/tutorial/background-tasks/)
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
+
+---
 
 ## 06 所属专题
 

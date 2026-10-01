@@ -30,17 +30,25 @@ WHERE rn <= 3;
 
 **面试追问：**取每组前三用 ROW_NUMBER 还是 RANK（看是否允许并列占位）；DISTINCT 和 GROUP BY 去重区别；JOIN 后 GROUP BY 要注意什么（连接字段唯一性防结果放大）。
 
+---
+
 ## 02 理解机制与追问
 
 保留的对照 SQL 是“先按用户聚合全年消费，再做全局前三”，不是每个业务分组的 Top N。真正每组 Top N 的关键是窗口 PARTITION BY 分组键；若明细行直接排名，不需要先 GROUP BY。ROW_NUMBER 精确取 N 行需唯一 tie-breaker；RANK 保留并列但会跳号，DENSE_RANK 取前 N 个不同排名，返回行数可能超过 N。
+
+---
 
 ## 03 易错点与适用边界
 
 平均分与每科达标已分别拆为独立问题；本题的原 YEAR(create_time) 条件可改为对应年份半开时间区间以利普通索引；保留原示例作为语义对照。
 
+---
+
 ## 04 面试口述
 
 先定义分组、并列和缺失数据口径。明细每组排名用分区窗口；消费排名先聚合再排。对照示例按用户聚合消费后全局排名；组内排名则明确写出分区维度。
+
+---
 
 ## 05 关联问题
 
@@ -49,10 +57,14 @@ WHERE rn <= 3;
 - [[八股/03-MySQL/05-SQL查询/02-左连接和右连接的区别？两表内联查询 on 和 where 的区别|JOIN 后行数放大]]
 - [[八股/03-MySQL/02-索引与查询优化/07-时间戳函数为什么可能导致索引失效？如何改写|日期条件改写]]
 
+---
+
 ## 06 官方参考
 
 - [MySQL 8.4 窗口函数](https://dev.mysql.com/doc/refman/8.4/en/window-function-descriptions.html)
 - [MySQL 8.4 范围访问与 Skip Scan](https://dev.mysql.com/doc/refman/8.4/en/range-optimization.html)
+
+---
 
 ## 07 所属专题
 

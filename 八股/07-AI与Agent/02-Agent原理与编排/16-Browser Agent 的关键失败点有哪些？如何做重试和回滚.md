@@ -26,13 +26,19 @@ aliases:
 
 口述：“重试前先确认页面状态和业务状态；恢复运行不等于回滚业务。”参见[[八股/07-AI与Agent/02-Agent原理与编排/21-Agent的checkpoint是什么|检查点边界]]。
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/06-Agent安全/04-为什么 Agent 项目必须做执行沙箱|为什么 Agent 项目必须做执行沙箱？]]
 
+---
+
 ## 04 参考资料
 
 - [LangGraph 官方持久化文档](https://docs.langchain.com/oss/python/langgraph/persistence)
+
+---
 
 ## 05 所属专题
 

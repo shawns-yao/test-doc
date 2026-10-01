@@ -26,6 +26,8 @@ aliases:
 
 口述：“模型提议、执行器把关、工具动作、结果核验、状态推进，这五件事分开，才能定位错在哪里。”
 
+---
+
 ## 03 关联追问
 
 - [[八股/07-AI与Agent/02-Agent原理与编排/01-Agent 的定义与核心组件？软件 Agent 与具身 Agent 有何不同|Agent 的定义与核心组件？软件 Agent 与具身 Agent 有何不同？]]
@@ -33,10 +35,14 @@ aliases:
 - [[八股/07-AI与Agent/10-Agent基础复习/02-一个完整的 Agent 一般包含哪几个核心模块(记忆、规划、工具调用、执行反馈这套说不清楚基本就凉半截)|一个完整的 Agent 一般包含哪几个核心模块?(记忆、规划、工具调用、执行反馈这套说不清楚基本就凉半截)]]
 - [[八股/07-AI与Agent/11-Agent工程复习/03-Function Calling 底层模型是怎么决定该调哪个工具、传什么参数的|Function Calling 底层模型是怎么"决定"该调哪个工具、传什么参数的?]]
 
+---
+
 ## 04 参考资料
 
 - [MCP 2025-11-25 Tools 规范](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
 - [MCP 官方安全实践](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices)
+
+---
 
 ## 05 所属专题
 

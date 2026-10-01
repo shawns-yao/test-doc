@@ -17,24 +17,34 @@ aliases:
 
 **追问：**词法和语法的区别（切 token vs 组结构）；AST 和 CST 的区别（是否保留无关语法细节）；怎么调试 AST（AST Explorer 可视化）。
 
+---
+
 ## 02 从源码到 AST 不是语义正确性证明
 
 词法分析识别 token，语法分析结合优先级、结合性与文法构造树；实际解析器常边取 token 边解析，不一定先存完整 token 数组。得到 AST 只证明语法可解析，名称解析、类型检查、控制流和运行时行为仍需后续阶段处理。
 
 代码变换需要理解绑定作用域，不能只按同名 Identifier 全局替换，否则会误改遮蔽变量。保留 source map、注释及位置元数据有助于调试；不同工具 AST 的节点类型也不完全一致，Babel 格式与 ESTree 有公开差异。
 
+---
+
 ## 03 工具版本订正
 
 Acorn、Babel、TypeScript 都有常见解析器实现，但不能永久断言“Vite 就使用 Acorn”：当前 Vite 8 的 Rolldown/Oxc 工具链已不同，应按具体版本和阶段判断。
+
+---
 
 ## 04 参考
 
 - [Babel parser：语法模式与 AST 差异](https://babeljs.io/docs/babel-parser)
 - [Vite 8 工具链变更](https://vite.dev/blog/announcing-vite8)
 
+---
+
 ## 05 相关问题与延伸
 
 - [[八股/11-前端/02-构建渲染与性能/01-vite build 做了哪些事情|vite build 做了哪些事情]]：源码解析与构建转换
+
+---
 
 ## 06 所属专题
 

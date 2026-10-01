@@ -31,6 +31,8 @@ aliases:
 
 一级缓存可能返回同一个对象引用，应用修改查询结果可能影响同会话后续读取；避免随意修改共享缓存结果，并理解本地缓存作用域。二级缓存不是数据库隔离级别或分布式一致性的替代。
 
+---
+
 ## 03 面试取舍与参考
 
 先说作用域和生命周期，再说失效边界。读多且更新路径受控时再评估二级缓存；复杂跨服务写入场景应明确缓存失效方案，不能只加 cache 注解就承诺一致。
@@ -39,6 +41,8 @@ aliases:
 - [MyBatis namespace 缓存](https://mybatis.org/mybatis-3/sqlmap-xml.html#cache)
 - [MyBatis-Spring SqlSessionTemplate 与事务会话](https://mybatis.org/spring/sqlsession.html)
 - [[八股/02-Spring框架/04-MyBatis/02-MyBatis 的参数绑定与字符串替换有什么区别|缓存之外的 SQL 参数安全]]
+
+---
 
 ## 04 所属专题
 
